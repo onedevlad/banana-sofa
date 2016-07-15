@@ -29,6 +29,7 @@ body
 .screen-1
 	background transparent
 	padding 0
+	margin-bottom 2%
 	.overlay
 		padding 1% 2%
 		width 100%
@@ -84,7 +85,24 @@ body
 				list-style-type none
 				background url(../images/mark.svg) no-repeat left
 				padding-left 2em
-				line-height 2.5em
+				line-height 2.75em
+
+.screen-2
+	background url(../images/sofa-bg.jpg)
+	background-size cover
+	background-position center 20%
+	padding 0
+	.overlay
+		margin 0
+		width 100%
+		background rgba(0, 0, 0, 0.9)
+		video
+			margin-top 10%
+			margin-bottom 10%
+
+.screen-3
+	color white
+
 
 @media(max-width $screen-md) // Mobile
 	.screen-1
@@ -98,6 +116,9 @@ body
 		.intro
 			.intro-img
 				margin-top 15%
+		.benefits
+			display inline-block
+			margin-top 15%
 @media(min-width $screen-md) // Desktop
 	.screen-1
 		.header-info

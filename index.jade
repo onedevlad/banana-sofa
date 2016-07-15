@@ -2,9 +2,11 @@ doctype
 html(lang='uk')
 	head
 		script(src='scripts/jquery.js')
+		script(defer, src='styles/slick/slick.min.js')
 		script(defer, src='scripts/custom.js')
 
 		link(rel='stylesheet', href='styles/custom.css')
+		link(rel='stylesheet', href='styles/slick/slick.css')
 		link(rel='icon', href='favicon.ico', type='image/x-icon')
 
 		meta(charset='UTF-8')
@@ -26,7 +28,7 @@ html(lang='uk')
 					.col-md-6.intro-text
 							.row
 								h1.intro-main Banana Air
-								span.intro-secondary Сделай свое лето более комфортным
+								span.intro-secondary Сделай свое лето более комфортным!
 					.col-md-6.pull-right.intro-img
 						img(src='../images/yellow-sofa.png' alt='Yellow Sofa')
 				.row
@@ -40,3 +42,14 @@ html(lang='uk')
 							li Не нужен насос
 							li Компактный, прочный и легкий
 							li Готов к использованию за 20 секунд
+		.container-fluid.screen-2
+			.row.overlay
+				video.col-xs-12.col-sm-6.col-sm-offset-3(preload='preload', controls='controls')
+					source(src='video/usingSofa.mp4')
+					source(src='video/usingSofa.webm')
+		.container-fluid.screen-3
+			.row
+				.slick-slider.col-xs-8.col-xs-offset-2
+					img(src='images/slider/0.jpg')
+					img(src='images/slider/1.jpg')
+					img(src='images/slider/2.jpg')

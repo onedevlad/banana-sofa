@@ -3119,6 +3119,7 @@ body {
 .screen-1 {
   background: transparent;
   padding: 0;
+  margin-bottom: 2%;
 }
 .screen-1 .overlay {
   padding: 1% 2%;
@@ -3194,7 +3195,27 @@ body {
   list-style-type: none;
   background: url("../images/mark.svg") no-repeat left;
   padding-left: 2em;
-  line-height: 2.5em;
+  line-height: 2.75em;
+}
+.screen-2 {
+  background: url("../images/sofa-bg.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  background-position: center 20%;
+  padding: 0;
+}
+.screen-2 .overlay {
+  margin: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.9);
+}
+.screen-2 .overlay video {
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+.screen-3 {
+  color: #fff;
 }
 @media (max-width: 992px) {
   .screen-1 .header-info .header-info-left {
@@ -3207,6 +3228,10 @@ body {
     text-align: center;
   }
   .screen-1 .intro .intro-img {
+    margin-top: 15%;
+  }
+  .screen-1 .benefits {
+    display: inline-block;
     margin-top: 15%;
   }
 }
