@@ -3107,6 +3107,9 @@ input[type="button"].btn-block {
   background: -ms-linear-gradient(top, #f3c501, #fedf5c);
   background: linear-gradient(to bottom, #f3c501, #fedf5c);
 }
+.order:active {
+  background: #c09c01;
+}
 html,
 body {
   overflow-x: hidden;
@@ -3117,7 +3120,7 @@ body {
   background: #eae8eb;
 }
 .screen-1 {
-  background: transparent;
+  background: #fff;
   padding: 0;
   margin-bottom: 2%;
 }
@@ -3208,7 +3211,7 @@ body {
 .screen-2 .overlay {
   margin: 0;
   width: 100%;
-  background: rgba(0,0,0,0.9);
+  background: rgba(0,0,0,0.85);
 }
 .screen-2 .overlay video {
   margin-top: 10%;
@@ -3216,6 +3219,9 @@ body {
 }
 .screen-3 {
   color: #fff;
+}
+.screen-3 .row {
+  margin: 5% 0;
 }
 @media (max-width: 992px) {
   .screen-1 .header-info .header-info-left {
@@ -3233,6 +3239,7 @@ body {
   .screen-1 .benefits {
     display: inline-block;
     margin-top: 15%;
+    margin-left: 10%;
   }
 }
 @media (min-width: 992px) {

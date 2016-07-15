@@ -18,6 +18,8 @@
 		margin-top 6px
 		box-shadow 0 0 0 deepDarkYellow
 		background linear-gradient(top, yellow, lightYellow)
+	&:active
+		background deepDarkYellow
 html
 body
 	overflow-x hidden
@@ -27,7 +29,7 @@ body
 .container-fluid
 	background #eae8eb
 .screen-1
-	background transparent
+	background white
 	padding 0
 	margin-bottom 2%
 	.overlay
@@ -95,14 +97,15 @@ body
 	.overlay
 		margin 0
 		width 100%
-		background rgba(0, 0, 0, 0.9)
+		background rgba(0, 0, 0, 0.85)
 		video
 			margin-top 10%
 			margin-bottom 10%
 
 .screen-3
 	color white
-
+	.row
+		margin 5% 0
 
 @media(max-width $screen-md) // Mobile
 	.screen-1
@@ -119,6 +122,8 @@ body
 		.benefits
 			display inline-block
 			margin-top 15%
+			margin-left 10%
+
 @media(min-width $screen-md) // Desktop
 	.screen-1
 		.header-info

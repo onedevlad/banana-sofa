@@ -27,11 +27,17 @@ $(document).ready(function(){ // Video module
 		video.running = false
 		clearTimeout(video.resetting)
 	}
-
-	$('body').scroll(function(){
+	function handleScroll(){
 		if($video.isInView()) play()
-		else pause()
-	})
+		else{
+			pause()
+			videoResetting = setTimeout(function(){
+				$video[0].currentTime = 0
+			}, videoResettingDelay * 1000)
+		}
+	}
+
+	$('body').scroll(handleScroll).bind('touchmove', handleScroll)
 
 	$('video').click(videoClick)
 })
@@ -40,5 +46,8 @@ $(document).ready(function(){ // Video module
 $(document).ready(function(){ // Slider module
 	$('.slick-slider').slick({
 		accessibility: true,
+		autoplay: true,
+		dots: true,
+		autoplaySpeed: 3000,
 	})
 })
