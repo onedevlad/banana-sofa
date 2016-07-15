@@ -1,234 +1,42 @@
-<?php $f=file_get_contents(dirname($_SERVER['SCRIPT_FILENAME']).'/scripts/config.json'); settype($f, 'string'); $parsed=json_decode($f, true);?>
-<?php if(isset($_POST['name']) && isset($_POST['surname']) && isset($_POST['phone']) && isset($_POST['color'])){mail($parsed['mail'], 'Новый заказ (iGlove)!', $_POST['surname'].' '.$_POST['name'].' (.'.$_POST['phone'].') заказал(а) iGlove, цвет: '.$_POST['color'].'.', "Content-type: text/plain; charset=utf-8");}?>
 doctype
-html(lang="uk")
+html(lang='uk')
 	head
-		<script>var originalPrice='<?php echo $parsed["original-price"]; ?>'; var discount='<?php echo $parsed["discount-percent"]; ?>'; var newPrice='<?php echo $parsed["new-price"]; ?>'; var specialSuggestionPrice='<?php echo $parsed["special-suggestion"]; ?>';</script>
-		script(type="text/javascript", async="", src="https://mc.yandex.ru/metrika/watch.js")
 		script(src='scripts/jquery.js')
-		script(src='scripts/mask.js')
 		script(defer, src='scripts/custom.js')
 
-		link(rel="stylesheet", href="styles/custom.css")
-		link(rel="icon", href="favicon.ico", type="image/x-icon")
+		link(rel='stylesheet', href='styles/custom.css')
+		link(rel='icon', href='favicon.ico', type='image/x-icon')
 
-		meta(charset="UTF-8")
+		meta(charset='UTF-8')
 		meta(name='viewport' content='width=device-width, initial-scale=1, user-scalable=no')
 
-		title iGloves.in.ua
+		title Banana Air
 	body
 		.container-fluid.screen-1
 			.overlay
 				.row.header-info
-					.col-md-4.header-info-left.pull-left
-						img(src="images/np.png", alt="")
-						span Доставка по всей Украине
-					.col-md-2.pull-right.header-info-right
+					.col-md-4.header-info-left
+						img(src='images/np.png', alt='Нова Пошта')
+						span.delivery-desc Доставка по <span class='xs-hidden'>всей</span> Украине
+					.col-md-2.col-md-offset-1.header-info-center
+						img(src='images/ukraine-map.png' alt='Ukraine')
+					.col-md-2.col-md-offset-3.header-info-right
 						span +38 (066) 881 06 22
-				.row.divider
-					.col-lg-12
-						.left
-						.inner
-						.right
-				.row.header
-					h1 iGlove
-				.row.order-box-wrapper
-					.col-sm-5.desc-box
-						h3 Пользоваться смартфоном в зимнее время стало удобнее!
-						iframe.video(src="https://www.youtube.com/embed/xsp91M4ifz0", frameborder="0", allowfullscreen)
-					.col-sm-4.col-sm-push-3.order-box
-						.discount
-							img.discount-img(src="images/discount.png", alt="")
-							nobr.discount-text
-								| -
-								span.discount-value 65
-								| %
-						h3 Закажите сейчас
-						span.original-price
-							span.original-price-value
-							|  грн
-						span.new-price
-							| Новая цена: 
-							span.new-price-value
-							|  грн
-						hr
-						form#special-form(method='POST')
-							table
-								tr
-									td.left
-										span Ваше имя:
-									td.right
-										input#special-name(name='name', size='18')
-								tr
-									td.left
-										span Ваша фамилия:
-									td.right
-										input#special-surname(name='surname', size='18')
-								tr
-									td.left
-										span Номер телефона:
-									td.right
-										input#special-phone(name='phone', size='18')
-								tr
-									td.left
-										span Цвет перчаток:
-									td.right
-										select(name='color')
-											option Черный
-											option Розовый
-											option Серый
-											option Голубой
-						button.order#special-order Заказать!
-		.container-fluid.screen-2
-			.container
-				h1 Преимущества перчаток
-				.row.properties
-					.col-md-3
-						img(src="images/devices.png", alt="")
-						span 
-							b iGlove 
-							| - это универсальные перчатки, которые подойдут к любому устройству
-					.col-md-3
-						img(src="images/energy.png", alt="")
-						span Благодаря уникальной технологии Touch Silver энергия от пальцев легко проходит к экрану 
-					.col-md-3
-						img(src="images/ok.png", alt="")
-						span Многолетний опыт использования 
-							b iGlove 
-							| показывает качество, практичность и
-							br 
-							| удобство таких перчаток
-					.col-md-3
-						img(src="images/glove.png", alt="")
-						span Перчатки подойдут каждому, независимо от размера руки
-			.row.divider
-				.col-lg-12
-					.left
-					.inner
-					.right
-		.container-fluid.screen-3
-			h1 Характеристики
-			.row.desc
-				.hidden-xs.hidden-sm.line.line-1
-				.hidden-xs.hidden-sm.line.line-2
-				.hidden-xs.hidden-sm.line.line-3
-				.hidden-xs.hidden-sm.line.line-4
-				.col-sm-3.hidden-xs.hidden-sm.desc-text
-					span.desc-text-1 Современный стиль
-					span.desc-text-3 Сильные морозы вам не страшны!
-				.col-sm-6.col-sm-offset-3.col-md-offset-0.desc-img
-					img(src='images/gloves-benefits.png')
-				.col-sm-3.hidden-xs.hidden-sm.desc-text
-					span.desc-text-2 Состав:
-						br
-						| 75% - акрил,
-						br
-						| 20% - шерсть,
-						br
-						| 5% - электропроводящая нить
-					span.desc-text-4 iGlove не боятся стирки
-				.col-xs-12.hidden-md.hidden-lg
-					span.desc-text-1 Современный стиль
-					span.desc-text-2 Состав:
-						br
-						| 75% - акрил,
-						br
-						| 20% - шерсть,
-						br
-						| 5% - электропроводящая нить
-					span.desc-text-3 Сильные морозы вам не страшны!
-					span.desc-text-4 iGlove не боятся стирки
-			button.order Заказать сейчас!
-			.row.divider
-				.col-lg-12
-					.left
-					.inner
-					.right
-		.container-fluid.screen-4
-			.row.description-title
-				h1 Выберите свой iGlove
-			.row.description
-				.col-md-3
-					img(src="images/black.png", alt="")
-					span Черный
-				.col-md-3
-					img(src="images/pink.png", alt="")
-					span Розовый
-				.col-md-3
-					img(src="images/gray.png", alt="")
-					span Серый
-				.col-md-3
-					img(src="images/blue.png", alt="")
-					span Голубой
-			.row.divider
-				.col-lg-12
-					.left
-					.inner
-					.right
-		.container-fluid.screen-5
-			h1 1+1
-			.row
-				span.special-suggestion Цена на второю пару iGlove &mdash; всего 
-					span.red-selection
-						span.special-suggestion-price
-						| грн!
-			.row
-				.col-sm-5
-					img.img-left(src='images/black-left.png')
-				.col-sm-2.plus-sign
-					span +
-				.col-sm-5
-					img.img-right(src='images/black.png')
-			.row.divider
-				.col-lg-12
-					.left
-					.inner
-					.right
-		.container-fluid.screen-6
-			.row.description-title
-				h1.col-lg-12 Как мы работаем
-			.row.description
-				.col-md-3
-					img(src="images/form.png", alt="")
-					span Заполните форму заказа
-				.col-md-3
-					img(src="images/reply.png", alt="")
-					span Мы свяжемся с вами в течение часа
-				.col-md-3
-					img(src="images/edit.png", alt="")
-					span Уточните детали заказа
-				.col-md-3
-					img(src="images/deliever.png", alt="")
-					span Получите ваш заказ
-			.row.divider
-				.col-lg-12
-					.left
-					.inner
-					.right
-		.container-fluid.screen-7#order-screen
-			h1 Закажите iGloves со скидкой
-			center
-				form#form(method='post')
-					table
-						tr
-							td Ваше имя:
-							td
-								input#name(type='text', autocomplete='off', name='name')
-						tr
-							td Ваша фамилия:
-							td
-								input#surname(type='text', autocomplete='off', name='surname')
-						tr
-							td Номер телефона:
-							td
-								input#phone(type='text', autocomplete='off', name='phone')
-						tr
-							td.left
-								span Цвет перчаток:
-							td.right
-								select(name='color')
-									option Черный
-									option Розовый
-									option Серый
-									option Голубой
-				button#order.order Отправить заказ
+				.row.intro
+					.col-md-6.intro-text
+							.row
+								h1.intro-main Banana Air
+								span.intro-secondary Сделай свое лето более комфортным
+					.col-md-6.pull-right.intro-img
+						img(src='../images/yellow-sofa.png' alt='Yellow Sofa')
+				.row
+					.col-md-6.order-info
+						.col-xs-12.price
+							span 1999грн
+						.col-xs-12.button
+							button.order Заказать!
+					.col-md-6.benefits
+						ul
+							li Не нужен насос
+							li Компактный, прочный и легкий
+							li Готов к использованию за 20 секунд

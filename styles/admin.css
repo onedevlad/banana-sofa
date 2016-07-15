@@ -3066,6 +3066,18 @@ input[type="button"].btn-block {
   }
 }
 @font-face {
+  font-family: 'Roboto';
+  src: url("../fonts/Roboto-Regular.ttf") format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'Roboto-Black';
+  src: url("../fonts/Roboto-Black.ttf") format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
   font-family: Roboto;
   src: url("../fonts/Roboto-Regular.ttf");
 }
@@ -3085,7 +3097,7 @@ input[type="button"].btn-block {
   top: 7px;
   width: 47%;
   height: 2px;
-  background: #666;
+  background: l-gray;
 }
 .divider .left {
   left: 0;
@@ -3096,7 +3108,7 @@ input[type="button"].btn-block {
 .divider .inner {
   width: 15px;
   height: 15px;
-  background: #666;
+  background: l-gray;
   -webkit-border-radius: 50%;
   border-radius: 50%;
   position: absolute;
