@@ -1,0 +1,315 @@
+@import "bootstrap/bootstrap/index.styl"
+@import "vars.styl"
+
+*
+	margin 0
+	padding 0
+
+.order
+	border-radius 2px
+	color white
+	background red
+	outline none
+	border none
+	padding 0.5em 0.8em
+	text-shadow 1px 1px 1px #262527
+	&:hover
+		background d-red
+.divider
+	margin-top 10%
+	position relative
+	height 15px
+	.left
+	.right
+		absolute top 7px
+		width 47%
+		height 2px
+		background #262527
+	.left
+		left 0
+	.right
+		right 0
+	.inner
+		width 15px
+		height 15px
+		background #262527
+		border-radius 50%
+		position absolute
+		left calc(50% - 7px)
+html
+body
+	overflow-x hidden
+	width 100%
+	height 100%
+
+.container-fluid
+	background #eae8eb
+body
+	background-image url(../images/bg.jpg)
+	background-position 50% 40%
+	background-attachment fixed
+	background-repeat no-repeat
+	background-size cover
+.screen-1
+	background transparent
+	padding 0
+	.overlay
+		padding 2% 5%
+		width 100%
+		height 100%
+		background rgba(black, 0.4)
+		.header-info
+			font-size 1.25em
+			color white
+			text-shadow 1px 1px 1px #262527
+			.header-info-left
+				img
+					width 18%
+				span
+					margin-left 5%
+			.header-info-right
+				height 100%
+				text-align center
+				span
+					display inline-block
+					font-weight bold
+					margin-top 12%
+		.divider
+			margin-top 3%
+			.left
+			.inner
+			.right
+				background white !important
+		.header
+			h1
+				color white
+				text-align center
+				font-size 5em
+				margin 5% 0
+				text-shadow 1px 1px 1px #262725
+		.order-box-wrapper
+			font-size 0.9em
+			position relative
+			text-shadow none
+			margin-top 5%
+			.desc-box
+				padding 15px 0 0 0
+				border-radius 7px
+				h3
+					text-shadow 1px 1px 1px #262725
+					color white
+					font-size 2em
+					text-align center
+					margin 0 0 5% 0
+				.video
+					height 305px
+					width 100%
+					border-radius 7px
+					background rgba(black, 0.75)
+			.order-box
+				border-radius 7px
+				padding 15px
+				background d-white
+				.discount
+					width 30%
+					absolute left -10% top -10%
+					.discount-img
+						width 100%
+					.discount-text
+						z-index 2
+						display inline-block
+						absolute top 35%
+						width 100%
+						color white
+						font-size 1.75em
+						text-align center
+						vertical-align middle
+				h3
+					font-size 2em
+					margin-top 0
+					text-align center
+					color d-gray
+				.original-price
+					margin-top 5%
+					color gray
+					display block
+					text-align center
+					font-size 1.25em
+					text-decoration line-through
+				.new-price
+					display block
+					text-align center
+					font-size 1.5em
+					color d-red
+				hr
+					margin-top 7%
+					height 1px
+					background #262725
+					color #262725
+					border none
+				table
+					// margin-top -5%
+					width 100% !important
+					td
+						padding 0.5em
+						input
+						select
+							padding 0.3em
+						input
+							display inline-block
+							width 100%
+				.order
+					display block
+					margin 7% auto 0 auto
+					font-size 1.25em
+.screen-2
+	h1
+		text-align center
+	.properties
+		margin 10% 0
+		text-align center
+		div
+			img
+				width 30%
+			span
+				display block
+				margin-top 5%
+				font-size 1.25em
+	.divider
+		margin-top 0
+@media(max-width 990px)
+	.properties
+		div
+			margin-top 10%
+			img
+				width 20% !important
+.screen-3
+	position relative
+	h1
+		text-align center
+	.desc
+		position relative
+		height 100%
+		margin 5% 0
+		.desc-img
+			overflow hidden
+			img
+				width 100%
+		.hidden-md.hidden-lg
+			span
+				display block
+				margin-top 5%
+				text-align center
+				font-size 1.25em
+		.desc-text
+			position relative
+			height 100%
+			span
+				width 100%
+				position absolute
+				display block
+				font-size 1.25em
+				&.desc-text-1
+				&.desc-text-2
+					top 20%
+				&.desc-text-3
+				&.desc-text-4
+					top 68%
+				&.desc-text-1
+				&.desc-text-3
+					padding-right 20%
+					text-align right
+				&.desc-text-2
+				&.desc-text-4
+					padding-left 10%
+					text-align left
+		.line
+			width 22.5%
+			z-index 2
+			height 2px
+			background #262725
+			&-1
+				absolute top 30% left 22.5%
+				transform rotateZ(15deg)
+			&-2
+				absolute top 30% right 22.5%
+				transform rotateZ(-15deg)
+			&-3
+				absolute top 60% left 22.5%
+				transform rotateZ(-15deg)
+			&-4
+				absolute top 60% right 22%
+				transform rotateZ(15deg)
+	.order
+		font-size 2em
+		display block
+		margin 5% auto
+	.divider
+		margin 2% 0
+		width 100%
+		absolute bottom 0
+.screen-4
+.screen-6
+	.description-title
+		h1
+			width 100%
+			display inline-block
+			text-align center
+	.description
+		margin 10% 0
+		text-align center
+		div
+			img
+				width 30%
+			span
+				display block
+				margin-top 5%
+				font-size 1.5em
+	.divider
+		margin 2% 0
+@media(max-width $grid-float-breakpoint)
+	.description
+		div
+			margin-top 10%
+			img
+				width 20% !important
+.screen-5
+	h1
+		text-align center
+		font-size 5em
+	.special-suggestion
+		margin 5% 0
+		text-align center
+		display inline-block
+		width 100%
+		font-size 2em
+		.red-selection
+			color d-red
+			font-weight bold
+	img
+		width 30%
+		&.img-left
+			float right
+		&.img-right
+			float left
+	.plus-sign
+		text-align center
+		font-size 15em
+.screen-7
+	h1
+		text-align center
+		margin-top 5%
+	center
+		font-size 1.5em
+		form table
+			margin 10% 0 5% 0
+			td
+				padding 0.5em
+				input
+				select
+					display inline-block
+					width 100%
+					padding 0.2em
+		button
+			margin-top 7%
+			margin-bottom 7%
