@@ -45,9 +45,13 @@ html(lang='uk')
 							li Готов к использованию за 20 секунд
 		.container-fluid.screen-2
 			.row.overlay
-				video.col-xs-12.col-sm-6.col-sm-offset-3(preload='preload', controls='controls')
-					source(src='video/usingSofa.mp4')
-					source(src='video/usingSofa.webm')
+				.row
+					.col-xs-12.video-header
+						h1 Банан надувается без насоса, смотри как легко:
+				.row
+					video.col-xs-12.col-sm-8.col-sm-offset-2(preload='preload', controls='controls')
+						source(src='video/usingSofa.mp4')
+						source(src='video/usingSofa.webm')
 		.container-fluid.screen-3
 			.row
 				.slick-slider.col-xs-8.col-xs-offset-2

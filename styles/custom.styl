@@ -12,7 +12,7 @@
 	outline none
 	border none
 	padding 0.5em 0.8em
-	text-shadow 1px 1px 1px #262527
+	text-shadow 1px 1px 1px gray
 	box-shadow 0 6px 0 deepDarkYellow
 	&:hover
 		margin-top 6px
@@ -26,10 +26,7 @@ body
 	width 100%
 	height 100%
 
-.container-fluid
-	background #eae8eb
 .screen-1
-	background white
 	padding 0
 	margin-bottom 2%
 	.overlay
@@ -59,7 +56,10 @@ body
 					font-weight bold
 		.intro
 			margin-top 5%
+			.row
+				margin 0
 			.intro-text
+				padding 0
 				text-align center
 				font-family Roboto
 				.intro-main
@@ -72,6 +72,7 @@ body
 					display inline-block
 					font-size 3em
 			.intro-img
+				padding 0
 				img
 					width 100%
 		.order-info
@@ -98,14 +99,20 @@ body
 		margin 0
 		width 100%
 		background rgba(0, 0, 0, 0.85)
+		.video-header
+			margin 3% 0
+			text-align center
+			color #fcf400
+			font-family Roboto-Bold
 		video
-			margin-top 10%
+			margin-top 2%
 			margin-bottom 10%
 
 .screen-3
-	color white
 	.row
 		margin 5% 0
+		.slick-arrow:before
+			color gray
 
 @media(max-width $screen-md) // Mobile
 	.screen-1
@@ -131,3 +138,6 @@ body
 				text-align left
 			.header-info-right
 				text-align right
+		.intro
+			.intro-img
+				margin-left -5%

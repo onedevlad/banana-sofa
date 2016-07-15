@@ -31,9 +31,9 @@ $(document).ready(function(){ // Video module
 		if($video.isInView()) play()
 		else{
 			pause()
-			videoResetting = setTimeout(function(){
+			video.resetting = setTimeout(function(){
 				$video[0].currentTime = 0
-			}, videoResettingDelay * 1000)
+			}, video.resettingDelay * 1000)
 		}
 	}
 
