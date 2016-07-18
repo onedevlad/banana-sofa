@@ -54,6 +54,15 @@ $(document).ready(function(){ // Slider module
     dots: true,
     autoplaySpeed: 3000,
   })
+  .on('afterChange', function(slick, currentSlideObj){
+    $('.gallery-img-title.active').removeClass('active')
+    $('.gallery-img-title[data-index="'+currentSlideObj.currentSlide+'"]').addClass('active')
+  })
+
+  $('.gallery-img-title').click(function(){
+    var index = $(this).attr('data-index')
+    $('.slick-slider').slick('slickGoTo', index)
+  })
 })
 
 $(document).ready(function(){ // Order module

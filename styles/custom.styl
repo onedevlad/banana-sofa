@@ -112,11 +112,20 @@ body
 			margin-bottom 10%
 
 .screen-3
-	.row
-		margin 5% 0
-		.slick-arrow:before
-			color gray
-
+	.slick-arrow:before
+		color gray
+	.gallery-nav
+		margin 5% 0 1% 0
+		.gallery-img-title
+			a
+				margin 0 1px
+				background transparent
+				border 1px solid #888
+				color #222
+			&.active
+				a
+					background #888
+					color #fff
 .screen-4
 	background url(../images/sofa-order-bg.jpg)
 	background-size cover

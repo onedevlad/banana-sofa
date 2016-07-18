@@ -60,13 +60,13 @@ html(lang='uk')
 			.row.gallery-nav
 				.col-xs-8.col-xs-offset-2
 					ul.nav.nav-pills.nav-justified
-						li#img_0.active(role='presentation')
+						li.gallery-img-title.active(data-index='0' role='presentation')
 							a(href='#') Парк
-						li#img_1(role='presentation')
+						li.gallery-img-title(data-index='1' role='presentation')
 							a(href='#') Пляж
-						li#img_2(role='presentation')
+						li.gallery-img-title(data-index='2' role='presentation')
 							a(href='#') Поход
-			.row
+			.row.gallery-wrapper
 				.slick-slider.col-xs-8.col-xs-offset-2
 					img(src='images/slider/0.jpg')
 					img(src='images/slider/1.jpg')

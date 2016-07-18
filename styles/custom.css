@@ -3623,11 +3623,21 @@ body {
   margin-top: 2%;
   margin-bottom: 10%;
 }
-.screen-3 .row {
-  margin: 5% 0;
-}
-.screen-3 .row .slick-arrow:before {
+.screen-3 .slick-arrow:before {
   color: #262527;
+}
+.screen-3 .gallery-nav {
+  margin: 5% 0 1% 0;
+}
+.screen-3 .gallery-nav .gallery-img-title a {
+  margin: 0 1px;
+  background: transparent;
+  border: 1px solid #888;
+  color: #222;
+}
+.screen-3 .gallery-nav .gallery-img-title.active a {
+  background: #888;
+  color: #fff;
 }
 .screen-4 {
   background: url("../images/sofa-order-bg.jpg");
