@@ -1,9 +1,13 @@
+// <?php $f=file_get_contents(dirname($_SERVER['SCRIPT_FILENAME']).'/scripts/config.json'); settype($f, 'string'); $parsed=json_decode($f, true);?>
+// <?php if(isset($_POST['name']) && isset($_POST['surname']) && isset($_POST['phone']) && isset($_POST['color'])){mail($parsed['mail'], 'Новый заказ (Banana Air)!', $_POST['surname'].' '.$_POST['name'].' (.'.$_POST['phone'].') заказал(а) Banana Air, цвет: '.$_POST['color'].'.', "Content-type: text/plain; charset=utf-8");}?>
 doctype
 html(lang='uk')
 	head
 		script(src='scripts/jquery.js')
-		script(defer, src='styles/slick/slick.min.js')
+		script(src='scripts/mask.js')
 		script(defer, src='scripts/custom.js')
+		script(src='styles/bootstrap/js/modal.js')
+		script(defer, src='styles/slick/slick.min.js')
 
 		link(rel='stylesheet', href='styles/custom.css')
 		link(rel='stylesheet', href='styles/slick/slick.css')
@@ -37,7 +41,7 @@ html(lang='uk')
 						.col-xs-12.price
 							span 1999грн
 						.col-xs-12.button
-							button.order Заказать!
+							button.order.order-yellow Заказать!
 					.col-md-6.benefits
 						ul
 							li Не нужен насос
@@ -53,8 +57,52 @@ html(lang='uk')
 						source(src='video/usingSofa.mp4')
 						source(src='video/usingSofa.webm')
 		.container-fluid.screen-3
+			.row.gallery-nav
+				.col-xs-8.col-xs-offset-2
+					ul.nav.nav-pills.nav-justified
+						li#img_0.active(role='presentation')
+							a(href='#') Парк
+						li#img_1(role='presentation')
+							a(href='#') Пляж
+						li#img_2(role='presentation')
+							a(href='#') Поход
 			.row
 				.slick-slider.col-xs-8.col-xs-offset-2
 					img(src='images/slider/0.jpg')
 					img(src='images/slider/1.jpg')
 					img(src='images/slider/2.jpg')
+		.container-fluid.screen-4#order-screen
+			#order-modal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
+				.modal-dialog
+					.modal-content
+						.modal-header
+							.container-fluid
+									h4 Заказажите Banana Air со скидкой!
+									button.btn.btn-danger.close.pull-right(type='button', data-dismiss='modal') &times;
+						.modal-body
+							center
+								form#form(method='post')
+									table
+										tr
+											td Ваше имя:
+											td
+												input#name(type='text', autocomplete='off', name='name')
+										tr
+											td Ваша фамилия:
+											td
+												input#surname(type='text', autocomplete='off', name='surname')
+										tr
+											td Номер телефона:
+											td
+												input#phone(type='text', autocomplete='off', name='phone')
+										tr
+											td.left
+												span Цвет:
+											td.right
+												select(name='color')
+													option Черный
+													option Розовый
+													option Серый
+													option Голубой
+									.button-wrapper
+										button#order.order.order-yellow Отправить заказ

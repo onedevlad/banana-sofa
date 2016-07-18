@@ -7,19 +7,22 @@
 
 .order
 	border-radius 10px
-	color white
-	background linear-gradient(top, lightYellow, yellow)
+	padding 0.5em 0.8em
 	outline none
 	border none
-	padding 0.5em 0.8em
-	text-shadow 1px 1px 1px gray
-	box-shadow 0 6px 0 deepDarkYellow
-	&:hover
-		margin-top 6px
-		box-shadow 0 0 0 deepDarkYellow
-		background linear-gradient(top, yellow, lightYellow)
+	transition all 0.1s ease
 	&:active
-		background deepDarkYellow
+		margin-top 6px
+	&-yellow
+		color white
+		background linear-gradient(top, lightYellow, yellow)
+		text-shadow 1px 1px 1px gray
+		box-shadow 0 6px 0 deepDarkYellow
+		&:active
+			box-shadow 0 0 0 deepDarkYellow
+		&:hover
+			background linear-gradient(top, yellow, lightYellow)
+
 html
 body
 	overflow-x hidden
@@ -113,6 +116,43 @@ body
 		margin 5% 0
 		.slick-arrow:before
 			color gray
+
+.screen-4
+	background url(../images/sofa-order-bg.jpg)
+	background-size cover
+	padding 0
+	#order-modal
+		h1
+			margin-top 5%
+			text-align center
+		center
+			font-size 1.5em
+			form table
+				margin 5% 0 5% 0
+				td
+					padding 0.5em
+					input
+					select
+						display inline-block
+						width 100%
+						padding 0.2em
+			.button-wrapper
+				margin-top 7%
+				margin-bottom 7%
+	.modal-content
+		.modal-header
+			.container-fluid
+				background transparent
+				padding 0
+				h4
+					display inline-block
+					width 80%
+				button
+					float right
+		.modal-body
+			padding 0
+
+
 
 @media(max-width $screen-md) // Mobile
 	.screen-1

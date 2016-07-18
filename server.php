@@ -1,6 +1,6 @@
 
-<!-- <?php $f=file_get_contents(dirname($_SERVER['SCRIPT_FILENAME']).'/scripts/config.json'); settype($f, 'string'); $parsed=json_decode($f, true);?>-->
-<!-- <?php if(isset($_POST['name']) && isset($_POST['surname']) && isset($_POST['phone']) && isset($_POST['color'])){mail($parsed['mail'], 'Новый заказ (Banana Air)!', $_POST['surname'].' '.$_POST['name'].' (.'.$_POST['phone'].') заказал(а) Banana Air, цвет: '.$_POST['color'].'.', "Content-type: text/plain; charset=utf-8");}?>--><!DOCTYPE html>
+<?php $f=file_get_contents(dirname($_SERVER['SCRIPT_FILENAME']).'/scripts/config.json'); settype($f, 'string'); $parsed=json_decode($f, true);?>
+<?php if(isset($_POST['name']) && isset($_POST['surname']) && isset($_POST['phone']) && isset($_POST['color'])){mail($parsed['mail'], 'Новый заказ (Banana Air)!', $_POST['surname'].' '.$_POST['name'].' (.'.$_POST['phone'].') заказал(а) Banana Air, цвет: '.$_POST['color'].'.', "Content-type: text/plain; charset=utf-8");}?><!DOCTYPE html>
 <html lang="uk">
   <head>
     <script src="scripts/jquery.js"></script>
@@ -65,15 +65,6 @@
       </div>
     </div>
     <div class="container-fluid screen-3">
-      <div class="row gallery-nav">
-        <div class="col-xs-8 col-xs-offset-2">
-          <ul class="nav nav-pills nav-justified">
-            <li id="img_0" role="presentation" class="active"><a href="#">Парк</a></li>
-            <li id="img_1" role="presentation"><a href="#">Пляж</a></li>
-            <li id="img_2" role="presentation"><a href="#">Поход</a></li>
-          </ul>
-        </div>
-      </div>
       <div class="row">
         <div class="slick-slider col-xs-8 col-xs-offset-2"><img src="images/slider/0.jpg"><img src="images/slider/1.jpg"><img src="images/slider/2.jpg"></div>
       </div>
