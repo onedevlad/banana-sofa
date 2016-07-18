@@ -3448,6 +3448,11 @@ input[type="button"].btn-block {
     display: none !important;
   }
 }
+.modal-backdrop.in {
+  opacity: 0.9;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+  filter: alpha(opacity=90);
+}
 @font-face {
   font-family: 'Roboto';
   src: url("../fonts/Roboto-Regular.ttf") format('truetype');
@@ -3524,7 +3529,7 @@ body {
 }
 .screen-1 .overlay .header-info {
   font-size: 1.25em;
-  color: #444;
+  color: #262527;
 }
 .screen-1 .overlay .header-info .header-info-left {
   height: 70px;
@@ -3632,11 +3637,11 @@ body {
 .screen-3 .gallery-nav .gallery-img-title a {
   margin: 0 1px;
   background: transparent;
-  border: 1px solid #888;
-  color: #222;
+  border: 1px solid lightG;
+  color: #262527;
 }
 .screen-3 .gallery-nav .gallery-img-title.active a {
-  background: #888;
+  background: #bbb;
   color: #fff;
 }
 .screen-4 {
@@ -3646,42 +3651,31 @@ body {
   background-size: cover;
   padding: 0;
 }
-.screen-4 #order-modal h1 {
-  margin-top: 5%;
-  text-align: center;
-}
-.screen-4 #order-modal center {
+.screen-4 #order-modal .modal-header h4 {
   font-size: 1.5em;
 }
-.screen-4 #order-modal center form table {
+.screen-4 #order-modal .modal-body center {
+  font-size: 1.25em;
+}
+.screen-4 #order-modal .modal-body center form table {
   margin: 5% 0 5% 0;
 }
-.screen-4 #order-modal center form table td {
+.screen-4 #order-modal .modal-body center form table td {
   padding: 0.5em;
 }
-.screen-4 #order-modal center form table td input,
-.screen-4 #order-modal center form table td select {
+.screen-4 #order-modal .modal-body center form table td input,
+.screen-4 #order-modal .modal-body center form table td select {
   display: inline-block;
   width: 100%;
   padding: 0.2em;
 }
-.screen-4 #order-modal center .button-wrapper {
+.screen-4 #order-modal .modal-body center .button-wrapper {
   margin-top: 7%;
-  margin-bottom: 7%;
 }
-.screen-4 .modal-content .modal-header .container-fluid {
-  background: transparent;
-  padding: 0;
-}
-.screen-4 .modal-content .modal-header .container-fluid h4 {
+.screen-4 #order-modal .modal-body center .personal-data-policy {
+  font-size: 0.75em;
   display: inline-block;
-  width: 80%;
-}
-.screen-4 .modal-content .modal-header .container-fluid button {
-  float: right;
-}
-.screen-4 .modal-content .modal-body {
-  padding: 0;
+  margin: 7% 0 2% 0;
 }
 @media (max-width: 992px) {
   .screen-1 .header-info .header-info-left {

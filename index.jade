@@ -1,5 +1,5 @@
 // <?php $f=file_get_contents(dirname($_SERVER['SCRIPT_FILENAME']).'/scripts/config.json'); settype($f, 'string'); $parsed=json_decode($f, true);?>
-// <?php if(isset($_POST['name']) && isset($_POST['surname']) && isset($_POST['phone']) && isset($_POST['color'])){mail($parsed['mail'], 'Новый заказ (Banana Air)!', $_POST['surname'].' '.$_POST['name'].' (.'.$_POST['phone'].') заказал(а) Banana Air, цвет: '.$_POST['color'].'.', "Content-type: text/plain; charset=utf-8");}?>
+// <?php if(isset($_POST['name']) && isset($_POST['surname']) && isset($_POST['phone']) && isset($_POST['color'])){mail($parsed['mail'], 'Новый заказ (Lamzac)!', $_POST['surname'].' '.$_POST['name'].' (.'.$_POST['phone'].') заказал(а) Lamzac, цвет: '.$_POST['color'].'.', "Content-type: text/plain; charset=utf-8");}?>
 doctype
 html(lang='uk')
 	head
@@ -32,7 +32,7 @@ html(lang='uk')
 				.row.intro
 					.col-md-6.intro-text
 							.row
-								h1.intro-main Banana Air
+								h1.intro-main Lamzac
 								span.intro-secondary Сделай свое лето более комфортным!
 					.col-md-6.intro-img
 						img(src='images/yellow-sofa.png' alt='Yellow Sofa')
@@ -44,9 +44,9 @@ html(lang='uk')
 							button.order.order-yellow Заказать!
 					.col-md-6.benefits
 						ul
-							li Не нужен насос
-							li Компактный, прочный и легкий
-							li Готов к использованию за 20 секунд
+							li Простой в использовании
+							li Нагрузка до 200 кг
+							li Не требуется насос
 		.container-fluid.screen-2
 			.row.overlay
 				.row
@@ -77,22 +77,22 @@ html(lang='uk')
 					.modal-content
 						.modal-header
 							.container-fluid
-									h4 Заказажите Banana Air со скидкой!
-									button.btn.btn-danger.close.pull-right(type='button', data-dismiss='modal') &times;
+									h4 Заказажите Lamzac со скидкой!
+										button.btn.btn-danger.close.pull-right(type='button', data-dismiss='modal') &times;
 						.modal-body
 							center
 								form#form(method='post')
 									table
 										tr
-											td Ваше имя:
+											td Имя:
 											td
 												input#name(type='text', autocomplete='off', name='name')
 										tr
-											td Ваша фамилия:
+											td Фамилия:
 											td
 												input#surname(type='text', autocomplete='off', name='surname')
 										tr
-											td Номер телефона:
+											td Телефон:
 											td
 												input#phone(type='text', autocomplete='off', name='phone')
 										tr
@@ -106,3 +106,4 @@ html(lang='uk')
 													option Голубой
 									.button-wrapper
 										button#order.order.order-yellow Отправить заказ
+									span.personal-data-policy Мы не передаем Вашу персональную информацию третьим лицам

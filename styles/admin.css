@@ -3448,6 +3448,11 @@ input[type="button"].btn-block {
     display: none !important;
   }
 }
+.modal-backdrop.in {
+  opacity: 0.9;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+  filter: alpha(opacity=90);
+}
 @font-face {
   font-family: 'Roboto';
   src: url("../fonts/Roboto-Regular.ttf") format('truetype');

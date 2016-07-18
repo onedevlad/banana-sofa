@@ -1,6 +1,6 @@
 
 <!-- <?php $f=file_get_contents(dirname($_SERVER['SCRIPT_FILENAME']).'/scripts/config.json'); settype($f, 'string'); $parsed=json_decode($f, true);?>-->
-<!-- <?php if(isset($_POST['name']) && isset($_POST['surname']) && isset($_POST['phone']) && isset($_POST['color'])){mail($parsed['mail'], 'Новый заказ (Banana Air)!', $_POST['surname'].' '.$_POST['name'].' (.'.$_POST['phone'].') заказал(а) Banana Air, цвет: '.$_POST['color'].'.', "Content-type: text/plain; charset=utf-8");}?>--><!DOCTYPE html>
+<!-- <?php if(isset($_POST['name']) && isset($_POST['surname']) && isset($_POST['phone']) && isset($_POST['color'])){mail($parsed['mail'], 'Новый заказ (Lamzac)!', $_POST['surname'].' '.$_POST['name'].' (.'.$_POST['phone'].') заказал(а) Lamzac, цвет: '.$_POST['color'].'.', "Content-type: text/plain; charset=utf-8");}?>--><!DOCTYPE html>
 <html lang="uk">
   <head>
     <script src="scripts/jquery.js"></script>
@@ -27,7 +27,7 @@
         <div class="row intro">
           <div class="col-md-6 intro-text">
             <div class="row">
-              <h1 class="intro-main">Banana Air</h1><span class="intro-secondary">Сделай свое лето более комфортным!</span>
+              <h1 class="intro-main">Lamzac</h1><span class="intro-secondary">Сделай свое лето более комфортным!</span>
             </div>
           </div>
           <div class="col-md-6 intro-img"><img src="images/yellow-sofa.png" alt="Yellow Sofa"></div>
@@ -41,9 +41,9 @@
           </div>
           <div class="col-md-6 benefits">
             <ul>
-              <li>Не нужен насос</li>
-              <li>Компактный, прочный и легкий</li>
-              <li>Готов к использованию за 20 секунд</li>
+              <li>Простой в использовании</li>
+              <li>Нагрузка до 200 кг</li>
+              <li>Не требуется насос</li>
             </ul>
           </div>
         </div>
@@ -84,8 +84,9 @@
           <div class="modal-content">
             <div class="modal-header">
               <div class="container-fluid">
-                <h4>Заказажите Banana Air со скидкой!</h4>
-                <button type="button" data-dismiss="modal" class="btn btn-danger close pull-right">&times;</button>
+                <h4>Заказажите Lamzac со скидкой!
+                  <button type="button" data-dismiss="modal" class="btn btn-danger close pull-right">&times;</button>
+                </h4>
               </div>
             </div>
             <div class="modal-body">
@@ -93,19 +94,19 @@
                 <form id="form" method="post">
                   <table>
                     <tr>
-                      <td>Ваше имя:</td>
+                      <td>Имя:</td>
                       <td>
                         <input id="name" type="text" autocomplete="off" name="name">
                       </td>
                     </tr>
                     <tr>
-                      <td>Ваша фамилия:</td>
+                      <td>Фамилия:</td>
                       <td>
                         <input id="surname" type="text" autocomplete="off" name="surname">
                       </td>
                     </tr>
                     <tr>
-                      <td>Номер телефона:</td>
+                      <td>Телефон:</td>
                       <td>
                         <input id="phone" type="text" autocomplete="off" name="phone">
                       </td>
@@ -124,7 +125,7 @@
                   </table>
                   <div class="button-wrapper">
                     <button id="order" class="order order-yellow">Отправить заказ</button>
-                  </div>
+                  </div><span class="personal-data-policy">Мы не передаем Вашу персональную информацию третьим лицам</span>
                 </form>
               </center>
             </div>
