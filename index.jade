@@ -38,15 +38,17 @@ html(lang='uk')
 						img(src='images/yellow-sofa.png' alt='Yellow Sofa')
 				.row
 					.col-md-6.order-info
-						.col-xs-12.price
-							span 1999грн
-						.col-xs-12.button
-							button.order.order-yellow Заказать!
-					.col-md-6.benefits
+						.row
+							.col-xs-12.price
+								span 1999грн
+							.col-xs-12.button
+								button.order.order-yellow Заказать!
+					.col-md-6.benefits-list
 						ul
 							li Простой в использовании
 							li Нагрузка до 200 кг
 							li Не требуется насос
+
 		.container-fluid.screen-2
 			.row.overlay
 				.row
@@ -56,22 +58,62 @@ html(lang='uk')
 					video.col-xs-12.col-sm-8.col-sm-offset-2(preload='preload', controls='controls')
 						source(src='video/usingSofa.mp4')
 						source(src='video/usingSofa.webm')
+
 		.container-fluid.screen-3
 			.row.gallery-nav
 				.col-xs-8.col-xs-offset-2
 					ul.nav.nav-pills.nav-justified
 						li.gallery-img-title.active(data-index='0' role='presentation')
-							a(href='#') Парк
+							a Парк
 						li.gallery-img-title(data-index='1' role='presentation')
-							a(href='#') Пляж
+							a Пляж
 						li.gallery-img-title(data-index='2' role='presentation')
-							a(href='#') Поход
+							a Поход
 			.row.gallery-wrapper
 				.slick-slider.col-xs-8.col-xs-offset-2
 					img(src='images/slider/0.jpg')
 					img(src='images/slider/1.jpg')
 					img(src='images/slider/2.jpg')
-		.container-fluid.screen-4#order-screen
+
+		.container-fluid.screen-4
+			.overlay
+				h1.floating-block Почему надувной Lamzac?
+				.row.desc
+					.hidden-xs.hidden-sm.line.line-1
+					.hidden-xs.hidden-sm.line.line-2
+					.hidden-xs.hidden-sm.line.line-3
+					.hidden-xs.hidden-sm.line.line-4
+					.col-sm-3.hidden-xs.hidden-sm.desc-text
+						span.desc-text-inner.desc-text-1.floating-block
+							span.desc-text-header Всесезонность.
+							| Lamzac удобно использовать как в летнее время на пляже или в походе, так и зимой на снегу.
+						span.desc-text-inner.desc-text-3.floating-block
+							span.desc-text-header Без насоса.
+							| Вам нужен только воздух и 20 секунд времени чтобы надуть диван-шезлонг, после чего Вы можете использовать Lamzac.
+					.col-sm-6.col-sm-offset-3.col-md-offset-0.desc-img
+						img(src='images/sofa.png').floating-block
+					.col-sm-3.hidden-xs.hidden-sm.desc-text
+						span.desc-text-inner.desc-text-2.floating-block
+							span.desc-text-header Прочный материал.
+							| Диван-шезлонг создан с ультратонкого нейлона Rip Stop, который отлично подстраивается под любую поверхность.
+						span.desc-text-inner.desc-text-4.floating-block
+							span.desc-text-header Практичность.
+							| Шезлонг очень маленький и его легко можно взять с собой куда угодно.
+					.col-xs-12.hidden-md.hidden-lg.mobile-desc-text
+						span.desc-text-inner.desc-text-1
+							span.desc-text-header Всесезонность.
+							| Lamzac удобно использовать как в летнее время на пляже или в походе, так и зимой на снегу.
+						span.desc-text-inner.desc-text-2
+							span.desc-text-header Прочный материал
+							| Диван-шезлонг создан с ультратонкого нейлона Rip Stop, который отлично подстраивается под любую поверхность.
+						span.desc-text-inner.desc-text-3
+							span.desc-text-header Без насоса.
+							| Вам нужен только воздух и 20 секунд времени чтобы надуть диван-шезлонг, после чего Вы можете использовать Lamzac.
+						span.desc-text-inner.desc-text-4
+							span.desc-text-header Практичность.
+							| Шезлонг очень маленький и его легко можно взять с собой куда угодно.
+
+		.container-fluid.screen-5#order-screen
 			#order-modal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
 				.modal-dialog
 					.modal-content

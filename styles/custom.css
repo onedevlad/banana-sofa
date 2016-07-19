@@ -3516,7 +3516,6 @@ html,
 body {
   overflow-x: hidden;
   width: 100%;
-  height: 100%;
 }
 .screen-1 {
   padding: 0;
@@ -3596,10 +3595,10 @@ body {
   margin-top: 1em;
   font-size: 2em;
 }
-.screen-1 .overlay .benefits {
+.screen-1 .overlay .benefits-list {
   font-size: 1.5em;
 }
-.screen-1 .overlay .benefits li {
+.screen-1 .overlay .benefits-list li {
   list-style-type: none;
   background: url("../images/mark.svg") no-repeat left;
   padding-left: 2em;
@@ -3635,6 +3634,7 @@ body {
   margin: 5% 0 1% 0;
 }
 .screen-3 .gallery-nav .gallery-img-title a {
+  cursor: pointer;
   margin: 0 1px;
   background: transparent;
   border: 1px solid lightG;
@@ -3645,34 +3645,149 @@ body {
   color: #fff;
 }
 .screen-4 {
-  background: url("../images/sofa-order-bg.jpg");
+  margin-top: 5%;
+  position: relative;
+  background: url("../images/benefits-bg.jpg");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
   padding: 0;
 }
-.screen-4 #order-modal .modal-header h4 {
-  font-size: 1.5em;
+.screen-4 .overlay {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  background: rgba(0,0,0,0.85);
 }
-.screen-4 #order-modal .modal-body center {
+.screen-4 .overlay h1 {
+  margin: 2em 0 0 0;
+  text-align: center;
+  color: #fcf400;
+  font-family: Roboto-Bold;
+}
+.screen-4 .overlay .desc {
+  position: relative;
+  height: 100%;
+  margin: 0;
+}
+.screen-4 .overlay .desc .desc-img {
+  overflow: hidden;
+}
+.screen-4 .overlay .desc .desc-img img {
+  width: 80%;
+}
+.screen-4 .overlay .desc .desc-text,
+.screen-4 .overlay .desc .mobile-desc-text {
+  color: #bbb;
+  position: relative;
+  text-align: center;
+}
+.screen-4 .overlay .desc .desc-text .desc-text-header,
+.screen-4 .overlay .desc .mobile-desc-text .desc-text-header {
+  color: #fcf400;
+  font-weight: bold;
+  display: block;
+}
+.screen-4 .overlay .desc .mobile-desc-text .desc-text-inner {
+  font-size: 1.5em;
+  display: inline-block;
+  margin: 10% 0 0 0;
+}
+.screen-4 .overlay .desc .desc-text {
+  height: 100%;
+}
+.screen-4 .overlay .desc .desc-text .desc-text-inner {
+  width: 90%;
+  position: absolute;
+  display: block;
   font-size: 1.25em;
 }
-.screen-4 #order-modal .modal-body center form table {
+.screen-4 .overlay .desc .desc-text .desc-text-inner.desc-text-1,
+.screen-4 .overlay .desc .desc-text .desc-text-inner.desc-text-2 {
+  top: 10%;
+}
+.screen-4 .overlay .desc .desc-text .desc-text-inner.desc-text-3,
+.screen-4 .overlay .desc .desc-text .desc-text-inner.desc-text-4 {
+  top: 65%;
+}
+.screen-4 .overlay .desc .desc-text .desc-text-inner.desc-text-1,
+.screen-4 .overlay .desc .desc-text .desc-text-inner.desc-text-3 {
+  padding-right: 10%;
+  text-align: right;
+}
+.screen-4 .overlay .desc .desc-text .desc-text-inner.desc-text-2,
+.screen-4 .overlay .desc .desc-text .desc-text-inner.desc-text-4 {
+  padding-left: 10%;
+  text-align: left;
+}
+.screen-4 .overlay .desc .line {
+  width: 22.5%;
+  z-index: 2;
+  height: 0;
+  border: 1px dashed #fff;
+}
+.screen-4 .overlay .desc .line-1 {
+  position: absolute;
+  top: 30%;
+  left: 22.5%;
+  -webkit-transform: rotateZ(30deg);
+  -moz-transform: rotateZ(30deg);
+  -o-transform: rotateZ(30deg);
+  -ms-transform: rotateZ(30deg);
+  transform: rotateZ(30deg);
+}
+.screen-4 .overlay .desc .line-2 {
+  position: absolute;
+  top: 30%;
+  right: 22.5%;
+  -webkit-transform: rotateZ(-30deg);
+  -moz-transform: rotateZ(-30deg);
+  -o-transform: rotateZ(-30deg);
+  -ms-transform: rotateZ(-30deg);
+  transform: rotateZ(-30deg);
+}
+.screen-4 .overlay .desc .line-3 {
+  position: absolute;
+  top: 60%;
+  left: 22.5%;
+  -webkit-transform: rotateZ(-30deg);
+  -moz-transform: rotateZ(-30deg);
+  -o-transform: rotateZ(-30deg);
+  -ms-transform: rotateZ(-30deg);
+  transform: rotateZ(-30deg);
+}
+.screen-4 .overlay .desc .line-4 {
+  position: absolute;
+  top: 60%;
+  right: 22.5%;
+  -webkit-transform: rotateZ(30deg);
+  -moz-transform: rotateZ(30deg);
+  -o-transform: rotateZ(30deg);
+  -ms-transform: rotateZ(30deg);
+  transform: rotateZ(30deg);
+}
+#order-screen #order-modal .modal-header h4 {
+  font-size: 1.5em;
+}
+#order-screen #order-modal .modal-body center {
+  font-size: 1.25em;
+}
+#order-screen #order-modal .modal-body center form table {
   margin: 5% 0 5% 0;
 }
-.screen-4 #order-modal .modal-body center form table td {
+#order-screen #order-modal .modal-body center form table td {
   padding: 0.5em;
 }
-.screen-4 #order-modal .modal-body center form table td input,
-.screen-4 #order-modal .modal-body center form table td select {
+#order-screen #order-modal .modal-body center form table td input,
+#order-screen #order-modal .modal-body center form table td select {
   display: inline-block;
   width: 100%;
   padding: 0.2em;
 }
-.screen-4 #order-modal .modal-body center .button-wrapper {
+#order-screen #order-modal .modal-body center .button-wrapper {
   margin-top: 7%;
 }
-.screen-4 #order-modal .modal-body center .personal-data-policy {
+#order-screen #order-modal .modal-body center .personal-data-policy {
   font-size: 0.75em;
   display: inline-block;
   margin: 7% 0 2% 0;
@@ -3688,15 +3803,34 @@ body {
     text-align: center;
   }
   .screen-1 .intro .intro-img {
-    margin-top: 15%;
+    margin: 15% 10% 0 10%;
+    width: 80%;
   }
-  .screen-1 .benefits {
-    display: inline-block;
-    margin-top: 15%;
-    margin-left: 10%;
+  .screen-1 .benefits-list {
+    margin: 15% 0 0 10%;
+  }
+  .screen-4 .desc .desc-img img {
+    margin: 10% 10% 5% 10%;
   }
 }
 @media (min-width: 992px) {
+  .floating-block {
+    padding: 20px 0 0 0;
+    opacity: 0.1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=10)";
+    filter: alpha(opacity=10);
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+  }
+  .floating {
+    opacity: 1;
+    -ms-filter: none;
+    filter: none;
+    padding: 0 0 20px 0;
+  }
   .screen-1 .header-info .header-info-left {
     text-align: left;
   }
@@ -3705,5 +3839,8 @@ body {
   }
   .screen-1 .intro .intro-img {
     margin-left: -5%;
+  }
+  .screen-4 .desc .desc-img img {
+    margin: 175px 5% 200px 10%;
   }
 }

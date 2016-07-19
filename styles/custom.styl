@@ -27,7 +27,6 @@ html
 body
 	overflow-x hidden
 	width 100%
-	height 100%
 
 .screen-1
 	padding 0
@@ -85,7 +84,7 @@ body
 			.button
 				margin-top 1em
 				font-size 2em
-		.benefits
+		.benefits-list
 			font-size 1.5em
 			li
 				list-style-type none
@@ -118,6 +117,7 @@ body
 		margin 5% 0 1% 0
 		.gallery-img-title
 			a
+				cursor pointer
 				margin 0 1px
 				background transparent
 				border 1px solid lightG
@@ -126,10 +126,85 @@ body
 				a
 					background lightGray
 					color white
+
 .screen-4
-	background url(../images/sofa-order-bg.jpg)
+	margin-top 5%
+	position relative
+	background url(../images/benefits-bg.jpg)
 	background-size cover
 	padding 0
+	.overlay
+		width 100%
+		overflow hidden
+		position relative
+		background rgba(black, 0.85)
+		h1
+			margin 2em 0 0 0
+			text-align center
+			color brightYellow
+			font-family Roboto-Bold
+		.desc
+			position relative
+			height 100%
+			margin 0
+			.desc-img
+				overflow hidden
+				img
+					width 80%
+			.desc-text
+			.mobile-desc-text
+				color lightGray
+				position relative
+				text-align center
+				.desc-text-header
+					color brightYellow
+					font-weight bold
+					display block
+			.mobile-desc-text
+				.desc-text-inner
+					font-size 1.5em
+					display inline-block
+					margin 10% 0 0 0
+			.desc-text
+				height 100%
+				.desc-text-inner
+					width 90%
+					position absolute
+					display block
+					font-size 1.25em
+					&.desc-text-1
+					&.desc-text-2
+						top 10%
+					&.desc-text-3
+					&.desc-text-4
+						top 65%
+					&.desc-text-1
+					&.desc-text-3
+						padding-right 10%
+						text-align right
+					&.desc-text-2
+					&.desc-text-4
+						padding-left 10%
+						text-align left
+			.line
+				width 22.5%
+				z-index 2
+				height 0
+				border 1px dashed white
+				&-1
+					absolute top 30% left 22.5%
+					transform rotateZ(30deg)
+				&-2
+					absolute top 30% right 22.5%
+					transform rotateZ(-30deg)
+				&-3
+					absolute top 60% left 22.5%
+					transform rotateZ(-30deg)
+				&-4
+					absolute top 60% right 22.5%
+					transform rotateZ(30deg)
+
+#order-screen
 	#order-modal
 		.modal-header
 			h4
@@ -165,13 +240,24 @@ body
 				text-align center
 		.intro
 			.intro-img
-				margin-top 15%
-		.benefits
-			display inline-block
-			margin-top 15%
-			margin-left 10%
+				margin 15% 10% 0 10%
+				width 80%
+		.benefits-list
+			margin 15% 0 0 10%
+	.screen-4
+		.desc
+			.desc-img
+				img
+					margin 10% 10% 5% 10%
 
 @media(min-width $screen-md) // Desktop
+	.floating-block
+		padding 20px 0 0 0
+		opacity 0.1
+		transition all 0.5s ease
+	.floating
+		opacity 1
+		padding 0 0 20px 0
 	.screen-1
 		.header-info
 			.header-info-left
@@ -181,3 +267,8 @@ body
 		.intro
 			.intro-img
 				margin-left -5%
+	.screen-4
+		.desc
+			.desc-img
+				img
+					margin 175px 5% 200px 10%

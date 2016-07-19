@@ -2,11 +2,13 @@ var video = {
   resettingDelay: 5,
   resetting: 0,
   running: false,
+  top: 0,
 }
 
-$.fn.isInView = function() {
-  return this[0].getBoundingClientRect().top >= - window.innerHeight / 2 &&
-         this[0].getBoundingClientRect().top <= window.innerHeight / 2
+$.fn.isInView = function(maxTopCoord, maxBottomCoord, fixedTop) {
+  console.log(window.innerHeight / maxBottomCoord)
+  return fixedTop - pageYOffset >= window.innerHeight / maxTopCoord &&
+         fixedTop - pageYOffset <= window.innerHeight / maxBottomCoord
 }
 
 $(document).ready(function(){ // Phone mask module
@@ -16,6 +18,7 @@ $(document).ready(function(){ // Phone mask module
 
 $(document).ready(function(){ // Video module
   var $video = $('video')
+  video.top = $video.offset().top
 
   function videoClick(){
     clearTimeout(video.resetting)
@@ -32,7 +35,7 @@ $(document).ready(function(){ // Video module
     clearTimeout(video.resetting)
   }
   function handleScroll(){
-    if($video.isInView()) play()
+    if($video.isInView(-2.5, 2, video.top)) play()
     else{
       pause()
       video.resetting = setTimeout(function(){
@@ -41,7 +44,7 @@ $(document).ready(function(){ // Video module
     }
   }
 
-  $('body').scroll(handleScroll).bind('touchmove', handleScroll)
+  $(window).scroll(handleScroll).bind('touchmove', handleScroll)
 
   $('video').click(videoClick)
 })
@@ -70,3 +73,22 @@ $(document).ready(function(){ // Order module
     $('#order-modal').modal()
   })
 })
+
+$(document).ready(function(){
+  $('.desc-img').ready(function(){
+    $('.desc-text').css('height', $('.desc-img').height()+'px')
+  })
+})
+
+if(window.innerWidth >= 992){
+  $(document).ready(function(){ // Floating module
+    function handleScroll() {
+      $('.floating-block').each(function(i){
+        var $this = $(this)
+        if($this.isInView(-5, 1.3, $(this).offset().top)) $this.addClass('floating')
+        else $this.removeClass('floating')
+      })
+    }
+    $(window).scroll(handleScroll).bind('touchmove', handleScroll)
+  })
+}
