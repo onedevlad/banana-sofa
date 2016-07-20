@@ -3486,11 +3486,6 @@ input[type="button"].btn-block {
   -o-transition: all 0.1s ease;
   -ms-transition: all 0.1s ease;
   transition: all 0.1s ease;
-}
-.order:active {
-  margin-top: 6px;
-}
-.order-yellow {
   color: #fff;
   background: -webkit-linear-gradient(top, #fedf5c, #f3c501);
   background: -moz-linear-gradient(top, #fedf5c, #f3c501);
@@ -3501,11 +3496,12 @@ input[type="button"].btn-block {
   -webkit-box-shadow: 0 6px 0 #c09c01;
   box-shadow: 0 6px 0 #c09c01;
 }
-.order-yellow:active {
+.order:active {
   -webkit-box-shadow: 0 0 0 #c09c01;
   box-shadow: 0 0 0 #c09c01;
+  margin-top: 6px;
 }
-.order-yellow:hover {
+.order:hover {
   background: -webkit-linear-gradient(top, #f3c501, #fedf5c);
   background: -moz-linear-gradient(top, #f3c501, #fedf5c);
   background: -o-linear-gradient(top, #f3c501, #fedf5c);
@@ -3766,28 +3762,132 @@ body {
   -ms-transform: rotateZ(30deg);
   transform: rotateZ(30deg);
 }
+.screen-5 {
+  padding: 0;
+}
+.screen-5 .row {
+  background: #111;
+  margin: 15% 0;
+}
+.screen-5 .row .promotion-wrapper {
+  margin: 7% 0;
+}
+.screen-5 .row .promotion-wrapper h1 {
+  color: #bbb;
+  font-size: 2.5em;
+  margin: 0;
+}
+.screen-5 .row .button-wrapper {
+  margin: 7% 0;
+  font-size: 2em;
+  display: inline-block;
+  text-align: center;
+}
+#order-screen h1 {
+  text-align: center;
+}
+#order-screen .row {
+  margin: 5% 0;
+}
+#order-screen .row .sofa-block {
+  width: 20%;
+  float: left;
+  margin: 0 2.5%;
+  border: 1px solid #bbb;
+  padding: 1%;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+#order-screen .row .sofa-block .img-section {
+  position: relative;
+  width: 100%;
+}
+#order-screen .row .sofa-block .img-section img {
+  width: 100%;
+}
+#order-screen .row .sofa-block .img-section .overlay {
+  width: 100%;
+  height: 100%;
+  background: rgba(187,187,187,0.9);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+#order-screen .row .sofa-block .img-section .overlay .wrapper {
+  width: 100%;
+  display: table;
+  height: 100%;
+}
+#order-screen .row .sofa-block .img-section .overlay .wrapper span {
+  color: #000;
+  text-align: center;
+  display: table-cell;
+  width: 100%;
+  vertical-align: middle;
+}
+#order-screen .row .sofa-block .tooltip-section {
+  margin-top: 1em;
+}
+#order-screen .row .sofa-block .tooltip-section .tooltip-body span {
+  font-weight: bold;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  color: #fff;
+  background: #e60100;
+  padding: 2px 5px;
+}
+#order-screen .row .sofa-block .tooltip-section .tooltip-arrow {
+  height: 0.75em;
+}
+#order-screen .row .sofa-block .tooltip-section .tooltip-arrow .arrow {
+  margin-left: 0.5em;
+  width: 0;
+  height: 0;
+  border-left: 0.75em solid transparent;
+  border-right: 0.75em solid transparent;
+  border-top: 0.5em solid #e60100;
+}
+#order-screen .row .sofa-block .name-section {
+  text-decoration: underline;
+  font-size: 1.5em;
+}
+#order-screen .row .sofa-block .price-section {
+  font-size: 1.5em;
+  margin-top: 0.5em;
+}
+#order-screen .row .sofa-block .price-section .old-price {
+  color: #bbb;
+  text-decoration: line-through;
+}
+#order-screen .row .sofa-block .price-section .new-price {
+  color: #e60100;
+  font-weight: bold;
+}
+#order-screen .row .order-section {
+  margin-top: 1em;
+}
 #order-screen #order-modal .modal-header h4 {
   font-size: 1.5em;
 }
-#order-screen #order-modal .modal-body center {
+#order-screen .modal-body center {
   font-size: 1.25em;
 }
-#order-screen #order-modal .modal-body center form table {
+#order-screen .modal-body center form table {
   margin: 5% 0 5% 0;
 }
-#order-screen #order-modal .modal-body center form table td {
+#order-screen .modal-body center form table td {
   padding: 0.5em;
 }
-#order-screen #order-modal .modal-body center form table td input,
-#order-screen #order-modal .modal-body center form table td select {
+#order-screen .modal-body center form table td input,
+#order-screen .modal-body center form table td select {
   display: inline-block;
   width: 100%;
   padding: 0.2em;
 }
-#order-screen #order-modal .modal-body center .button-wrapper {
+#order-screen .modal-body center .button-wrapper {
   margin-top: 7%;
 }
-#order-screen #order-modal .modal-body center .personal-data-policy {
+#order-screen .modal-body center .personal-data-policy {
   font-size: 0.75em;
   display: inline-block;
   margin: 7% 0 2% 0;

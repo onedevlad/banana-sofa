@@ -11,17 +11,15 @@
 	outline none
 	border none
 	transition all 0.1s ease
+	color white
+	background linear-gradient(top, lightYellow, yellow)
+	text-shadow 1px 1px 1px gray
+	box-shadow 0 6px 0 deepDarkYellow
 	&:active
+		box-shadow 0 0 0 deepDarkYellow
 		margin-top 6px
-	&-yellow
-		color white
-		background linear-gradient(top, lightYellow, yellow)
-		text-shadow 1px 1px 1px gray
-		box-shadow 0 6px 0 deepDarkYellow
-		&:active
-			box-shadow 0 0 0 deepDarkYellow
-		&:hover
-			background linear-gradient(top, yellow, lightYellow)
+	&:hover
+		background linear-gradient(top, yellow, lightYellow)
 
 html
 body
@@ -204,11 +202,91 @@ body
 					absolute top 60% right 22.5%
 					transform rotateZ(30deg)
 
+.screen-5
+	padding 0
+	.row
+		background #111
+		margin 15% 0
+		.promotion-wrapper
+			margin 7% 0
+			h1
+				color lightGray
+				font-size 2.5em
+				margin 0
+		.button-wrapper
+			margin 7% 0
+			font-size 2em
+			display inline-block
+			text-align center
+
 #order-screen
-	#order-modal
-		.modal-header
-			h4
+	h1
+		text-align center
+	.row
+		margin 5% 0
+		.sofa-block
+			width 20%
+			float left
+			margin 0 2.5%
+			border 1px solid lightGray
+			padding 1%
+			border-radius 5px
+			.img-section
+				position relative
+				width 100%
+				img
+					width 100%
+				.overlay
+					width 100%
+					height 100%
+					background rgba(lightGray, 0.9)
+					absolute left top
+					.wrapper
+						width 100%
+						display table
+						height 100%
+						span
+							color black
+							text-align center
+							display table-cell
+							width 100%
+							vertical-align middle
+			.tooltip-section
+				margin-top 1em
+				.tooltip-body
+					span
+						font-weight bold
+						border-radius 3px
+						color white
+						background red
+						padding 2px 5px
+				.tooltip-arrow
+					height .75em
+					.arrow
+						margin-left .5em
+						width 0
+						height 0
+						border-left .75em solid transparent
+						border-right .75em solid transparent
+						border-top .5em solid red
+			.name-section
+				text-decoration underline
 				font-size 1.5em
+			.price-section
+				font-size 1.5em
+				margin-top .5em
+				.old-price
+					color lightGray
+					text-decoration line-through
+				.new-price
+					color red
+					font-weight bold
+		.order-section
+			margin-top 1em
+	#order-modal
+			.modal-header
+				h4
+					font-size 1.5em
 		.modal-body
 			center
 				font-size 1.25em

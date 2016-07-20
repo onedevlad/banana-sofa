@@ -35,14 +35,14 @@ html(lang='uk')
 								h1.intro-main Lamzac
 								span.intro-secondary Сделай свое лето более комфортным!
 					.col-md-6.intro-img
-						img(src='images/yellow-sofa.png' alt='Yellow Sofa')
+						img(src='images/intro-sofa.png' alt='Yellow Sofa')
 				.row
 					.col-md-6.order-info
 						.row
 							.col-xs-12.price
 								span 1999грн
 							.col-xs-12.button
-								button.order.order-yellow Заказать!
+								button.order.goto-order Заказать!
 					.col-md-6.benefits-list
 						ul
 							li Простой в использовании
@@ -91,7 +91,7 @@ html(lang='uk')
 							span.desc-text-header Без насоса.
 							| Вам нужен только воздух и 20 секунд времени чтобы надуть диван-шезлонг, после чего Вы можете использовать Lamzac.
 					.col-sm-6.col-sm-offset-3.col-md-offset-0.desc-img
-						img(src='images/sofa.png').floating-block
+						img(src='images/sofas/yellow.png').floating-block
 					.col-sm-3.hidden-xs.hidden-sm.desc-text
 						span.desc-text-inner.desc-text-2.floating-block
 							span.desc-text-header Прочный материал.
@@ -113,8 +113,128 @@ html(lang='uk')
 							span.desc-text-header Практичность.
 							| Шезлонг очень маленький и его легко можно взять с собой куда угодно.
 
-		.container-fluid.screen-5#order-screen
-			#order-modal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
+		.container-fluid.screen-5
+			.row
+				.col-md-6.promotion-wrapper
+					h1 Закажите Lamzac сейчас
+						br
+						| и получите скидку 40%!
+				.col-md-6.button-wrapper
+					button.order.goto-order Заказать со скидкой!
+
+		.container-fluid#order-screen
+			h1 Выбери свой Lamzac
+			.row
+				.sofa-block
+					.img-section
+						img(src='images/sofas/black.png')
+						.overlay
+							.wrapper
+								span Нет в наличии
+					.tooltip-section
+						.tooltip-body
+							span -20%
+						.tooltip-arrow
+							.arrow
+					.name-section
+						span Black Lamzac
+					.price-section
+						.old-price
+							span 1999грн
+						.new-price
+							span 1499грн
+					.order-section
+						button.order Купить
+				.sofa-block
+					.img-section
+						img(src='images/sofas/blue.png')
+					.tooltip-section
+						.tooltip-body
+							span -20%
+						.tooltip-arrow
+							.arrow
+					.name-section
+						span Blue Lamzac
+					.price-section
+						.old-price
+							span 1999грн
+						.new-price
+							span 1499грн
+					.order-section
+						button.order Купить
+				.sofa-block
+					.img-section
+						img(src='images/sofas/green.png')
+					.tooltip-section
+						.tooltip-body
+							span -20%
+						.tooltip-arrow
+							.arrow
+					.name-section
+						span Green Lamzac
+					.price-section
+						.old-price
+							span 1999грн
+						.new-price
+							span 1499грн
+					.order-section
+						button.order Купить
+				.sofa-block
+					.img-section
+						img(src='images/sofas/red.png')
+					.tooltip-section
+						.tooltip-body
+							span -20%
+						.tooltip-arrow
+							.arrow
+					.name-section
+						span Red Lamzac
+					.price-section
+						.old-price
+							span 1999грн
+						.new-price
+							span 1499грн
+					.order-section
+						button.order Купить
+			.row
+				.sofa-block
+					.img-section
+						img(src='images/sofas/violet.png')
+					.tooltip-section
+						.tooltip-body
+							span -20%
+						.tooltip-arrow
+							.arrow
+					.name-section
+						span Violet Lamzac
+					.price-section
+						.old-price
+							span 1999грн
+						.new-price
+							span 1499грн
+					.order-section
+						button.order Купить
+				.sofa-block
+					.img-section
+						img(src='images/sofas/yellow.png')
+						.overlay
+							.wrapper
+								span Нет в наличии
+					.tooltip-section
+						.tooltip-body
+							span -20%
+						.tooltip-arrow
+							.arrow
+					.name-section
+						span Yellow Lamzac
+					.price-section
+						.old-price
+							span 1999грн
+						.new-price
+							span 1499грн
+					.order-section
+						button.order Купить
+			#order-modal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='Order', aria-hidden='true')
 				.modal-dialog
 					.modal-content
 						.modal-header
@@ -147,5 +267,5 @@ html(lang='uk')
 													option Серый
 													option Голубой
 									.button-wrapper
-										button#order.order.order-yellow Отправить заказ
+										button#order.order Отправить заказ
 									span.personal-data-policy Мы не передаем Вашу персональную информацию третьим лицам

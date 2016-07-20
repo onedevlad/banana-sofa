@@ -6,7 +6,6 @@ var video = {
 }
 
 $.fn.isInView = function(maxTopCoord, maxBottomCoord, fixedTop) {
-  console.log(window.innerHeight / maxBottomCoord)
   return fixedTop - pageYOffset >= window.innerHeight / maxTopCoord &&
          fixedTop - pageYOffset <= window.innerHeight / maxBottomCoord
 }
@@ -69,8 +68,9 @@ $(document).ready(function(){ // Slider module
 })
 
 $(document).ready(function(){ // Order module
-  $('.order').on('click', function(){
-    $('#order-modal').modal()
+  $('.goto-order').on('click', function(){
+    $('body').animate({'scrollTop': $('#order-screen').offset().top}, 500);
+    //$('#order-modal').modal()
   })
 })
 
