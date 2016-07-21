@@ -15,7 +15,7 @@
 	</head>
 	<body>
 		<div class="container">
-			<h1>Админ-панель сайта stickymp.in.ua</h1>
+			<h1>Админ-панель сайта</h1>
 			<?php
 				if(!isset($_POST['password'])){
 			?>
@@ -47,18 +47,10 @@
 						</tr>
 						<tr>
 							<td>
-								Процент скидки (в зависимости от этого значения считается новая цена товара):
+								Процент скидки (Новая цена товара НЕ считается в зависимости от этого значения):
 							</td>
 							<td>
 								<input type='number' name='discount-percent' value="<?php echo $parsed['discount-percent'];?>"> %
-							</td>
-						</tr>
-						<tr>
-							<td>
-								Специальное предложение (цена на вторую пару):
-							</td>
-							<td>
-								<input type='number' name='special-suggestion' value="<?php echo $parsed['special-suggestion'];?>"> грн
 							</td>
 						</tr>
 						<tr>
@@ -67,6 +59,37 @@
 							</td>
 							<td>
 								<input type='number' name='new-price' value="<?php echo $parsed['new-price'];?>"> грн
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Присутствующие цвета:
+							</td>
+							<td>
+								<label>
+									<input type='checkbox' name='black-available' <?php if($parsed['goods-status']['black'] == 'true') { echo 'checked="checked"'; }?>>
+									Чёрный
+								</label>
+								<label>
+									<input type='checkbox' name='blue-available' <?php if($parsed['goods-status']['blue'] == 'true') { echo 'checked="checked"'; }?>>
+									Голубой
+								</label>
+								<label>
+									<input type='checkbox' name='green-available' <?php if($parsed['goods-status']['green'] == 'true') { echo 'checked="checked"'; }?>>
+									Зелёный
+								</label>
+								<label>
+									<input type='checkbox' name='red-available' <?php if($parsed['goods-status']['red'] == 'true') { echo 'checked="checked"'; }?>>
+									Красный
+								</label>
+								<label>
+									<input type='checkbox' name='violet-available' <?php if($parsed['goods-status']['violet'] == 'true') { echo 'checked="checked"'; }?>>
+									Фиолетовый
+								</label>
+								<label>
+									<input type='checkbox' name='yellow-available' <?php if($parsed['goods-status']['yellow'] == 'true') { echo 'checked="checked"'; }?>>
+									Жёлтый
+								</label>
 							</td>
 						</tr>
 						<tr>
@@ -83,7 +106,7 @@
 					<?php
 				}
 				else{
-					mail($parsed['mail'], 'Уведомление от stickymp!', "Используйте этот код как пароль аккаунта админ-панели: $f", "Content-type: text/plain; charset=utf-8");
+					mail($parsed['mail'], 'Уведомление от bananaAir!', "Используйте этот код как пароль аккаунта админ-панели: $f", "Content-type: text/plain; charset=utf-8");
 					echo "Неверный пароль! На почту <b>".$parsed['mail']."</b> было отправлено уведомление с кодом восстановения пароля.";
 				}
 			}
@@ -92,14 +115,21 @@
 			$originalPrice=$_POST['original-price'];
 			$newPrice=$_POST['new-price'];
 			$discount=$_POST['discount-percent'];
-			$specialSuggestion=$_POST['special-suggestion'];
+			$goodsStatus=array(
+				'black' => $_POST['black-available'] == 'on' ? 'true' : 'false',
+				'blue' => $_POST['blue-available'] == 'on' ? 'true' : 'false',
+				'green' => $_POST['green-available'] == 'on' ? 'true' : 'false',
+				'red' => $_POST['red-available'] == 'on' ? 'true' : 'false',
+				'violet' => $_POST['violet-available'] == 'on' ? 'true' : 'false',
+				'yellow' => $_POST['yellow-available'] == 'on' ? 'true' : 'false',
+			);
 			$mail=$_POST['mail'];
 			$newPassword=$_POST['new-password'];
 			if(!isset($_POST['original-price'])) $originalPrice='250';
 			if(!isset($_POST['discount-percent'])) $discount='30';
 			if(isset($_POST['mail']) && isset($_POST['new-password'])){
 				if($parsed['mail'] !== $mail){
-					mail($parsed['mail'], 'Уведомление stickymp!', "E-mail приема заказов был изменен на: $mail", "Content-type: text/plain; charset=utf-8");
+					mail($parsed['mail'], 'Уведомление bananaAir!', "E-mail приема заказов был изменен на: $mail", "Content-type: text/plain; charset=utf-8");
 					echo "<br/>На почту <b>".$parsed['mail']."</b> было отправлено уведомление о смене E-mail.";
 				}
 				$arr=array(
@@ -107,7 +137,7 @@
 					'original-price' => $originalPrice,
 					'new-price' => $newPrice,
 					'discount-percent' => $discount,
-					'special-suggestion' => $specialSuggestion,
+					'goods-status' => $goodsStatus,
 				);
 				$newJSON=json_encode($arr);
 				$fp = fopen(dirname($_SERVER['SCRIPT_FILENAME']).'/../scripts/config.json', 'w');
@@ -117,7 +147,7 @@
 				fwrite($fp1, md5($newPassword));
 				fclose($fp1);
 				if($f !== md5($newPassword)){
-					mail($_POST['mail'], 'Уведомление от stickymp!', "Пароль аккаунта админ-панели сменен: $newPassword", "Content-type: text/plain; charset=utf-8");
+					mail($_POST['mail'], 'Уведомление от bananaAir!', "Пароль аккаунта админ-панели сменен: $newPassword", "Content-type: text/plain; charset=utf-8");
 					echo "<br/>На почту <b>".$_POST['mail']."</b> было отправлено уведомление о смене пароля.";
 				}
 			}

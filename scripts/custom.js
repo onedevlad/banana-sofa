@@ -4,16 +4,42 @@ var video = {
   running: false,
   top: 0,
 }
+var config = null
+var chosenColor = null
+var chosenColorName = null
 
 $.fn.isInView = function(maxTopCoord, maxBottomCoord, fixedTop) {
   return fixedTop - pageYOffset >= window.innerHeight / maxTopCoord &&
          fixedTop - pageYOffset <= window.innerHeight / maxBottomCoord
 }
 
+$(document).ready(function(){ // Config module
+  function applyConfig(){
+    $('.original-price-value').html(config['original-price'])
+    $('.new-price-value').html(config['new-price'])
+    $('.discount-value').html(config['discount-percent'])
+    $('.overlay-black').css('display', config['goods-status']['black'] === 'true' ? 'none' : 'block')
+    $('.overlay-blue').css('display', config['goods-status']['blue'] === 'true' ? 'none' : 'block')
+    $('.overlay-green').css('display', config['goods-status']['green'] === 'true' ? 'none' : 'block')
+    $('.overlay-red').css('display', config['goods-status']['red'] === 'true' ? 'none' : 'block')
+    $('.overlay-violet').css('display', config['goods-status']['violet'] === 'true' ? 'none' : 'block')
+    $('.overlay-yellow').css('display', config['goods-status']['yellow'] === 'true' ? 'none' : 'block')
+  }
+
+  var xhr = new XMLHttpRequest()
+  xhr.open('GET', 'scripts/config.json', true)
+  xhr.send()
+  xhr.onreadystatechange = function(){
+    if(xhr.readyState === 4) {
+      config = JSON.parse(xhr.responseText)
+      applyConfig()
+    }
+  }
+})
+
 $(document).ready(function(){ // Phone mask module
   $("#phone").mask("+38 (099) 999-99-99")
 })
-
 
 $(document).ready(function(){ // Video module
   var $video = $('video')
@@ -70,13 +96,29 @@ $(document).ready(function(){ // Slider module
 $(document).ready(function(){ // Order module
   $('.goto-order').on('click', function(){
     $('body').animate({'scrollTop': $('#order-screen').offset().top}, 500);
-    //$('#order-modal').modal()
+  })
+  $('.buy').on('click', function(){
+    chosenColor = $(this).attr('id').split('-')[1]
+    switch(chosenColor) {
+      case 'black': chosenColorName = 'Чёрный'; break;
+      case 'blue': chosenColorName = 'Голубой'; break;
+      case 'green': chosenColorName = 'Зелёный'; break;
+      case 'red': chosenColorName = 'Красный'; break;
+      case 'violet': chosenColorName = 'Фиолетовый'; break;
+      case 'yellow': chosenColorName = 'Жёлтый'; break;
+    }
+    $('#color-name').html(chosenColorName)
+    $('#order-modal').modal()
   })
 })
 
 $(document).ready(function(){
   $('.desc-img').ready(function(){
-    $('.desc-text').css('height', $('.desc-img').height()+'px')
+    setTimeout(function(){
+      var descImgRect = $('.desc-img')[0].getBoundingClientRect()
+      var height = descImgRect.bottom - descImgRect.top
+      $('.desc-text').css('height', height+'px')
+    }, 0)
   })
 })
 

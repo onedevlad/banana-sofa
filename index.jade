@@ -1,5 +1,5 @@
-// <?php $f=file_get_contents(dirname($_SERVER['SCRIPT_FILENAME']).'/scripts/config.json'); settype($f, 'string'); $parsed=json_decode($f, true);?>
-// <?php if(isset($_POST['name']) && isset($_POST['surname']) && isset($_POST['phone']) && isset($_POST['color'])){mail($parsed['mail'], 'Новый заказ (Lamzac)!', $_POST['surname'].' '.$_POST['name'].' (.'.$_POST['phone'].') заказал(а) Lamzac, цвет: '.$_POST['color'].'.', "Content-type: text/plain; charset=utf-8");}?>
+<?php $f=file_get_contents(dirname($_SERVER['SCRIPT_FILENAME']).'/scripts/config.json'); settype($f, 'string'); $parsed=json_decode($f, true);?>
+<?php if(isset($_POST['name']) && isset($_POST['surname']) && isset($_POST['phone']) && isset($_POST['color'])){mail($parsed['mail'], 'Новый заказ (Lamzac)!', $_POST['surname'].' '.$_POST['name'].' (.'.$_POST['phone'].') заказал(а) Lamzac, цвет: '.$_POST['color'].'.', "Content-type: text/plain; charset=utf-8");}?>
 doctype
 html(lang='uk')
 	head
@@ -40,7 +40,9 @@ html(lang='uk')
 					.col-md-6.order-info
 						.row
 							.col-xs-12.price
-								span 1999грн
+								span
+									span.new-price-value 1999
+									| грн
 							.col-xs-12.button
 								button.order.goto-order Заказать!
 					.col-md-6.benefits-list
@@ -118,7 +120,9 @@ html(lang='uk')
 				.col-md-6.promotion-wrapper
 					h1 Закажите Lamzac сейчас
 						br
-						| и получите скидку 40%!
+						| и получите скидку 
+						span.discount-value 40
+						| %!
 				.col-md-6.button-wrapper
 					button.order.goto-order Заказать со скидкой!
 
@@ -127,114 +131,162 @@ html(lang='uk')
 			.row
 				.sofa-block
 					.img-section
-						img(src='images/sofas/black.png')
-						.overlay
+						img(src='images/sofas/blue.png')
+						.overlay.overlay-blue
 							.wrapper
 								span Нет в наличии
 					.tooltip-section
 						.tooltip-body
-							span -20%
-						.tooltip-arrow
-							.arrow
-					.name-section
-						span Black Lamzac
-					.price-section
-						.old-price
-							span 1999грн
-						.new-price
-							span 1499грн
-					.order-section
-						button.order Купить
-				.sofa-block
-					.img-section
-						img(src='images/sofas/blue.png')
-					.tooltip-section
-						.tooltip-body
-							span -20%
+							span - 
+								span.discount-value 40
+								|%
 						.tooltip-arrow
 							.arrow
 					.name-section
 						span Blue Lamzac
 					.price-section
 						.old-price
-							span 1999грн
+							span
+								span.original-price-value 1999
+								| грн
 						.new-price
-							span 1499грн
+							span
+								span.new-price-value 1499
+								| грн
 					.order-section
-						button.order Купить
-				.clearfix-mobile
-				.sofa-block
-					.img-section
-						img(src='images/sofas/green.png')
-					.tooltip-section
-						.tooltip-body
-							span -20%
-						.tooltip-arrow
-							.arrow
-					.name-section
-						span Green Lamzac
-					.price-section
-						.old-price
-							span 1999грн
-						.new-price
-							span 1499грн
-					.order-section
-						button.order Купить
-				.sofa-block
-					.img-section
-						img(src='images/sofas/red.png')
-					.tooltip-section
-						.tooltip-body
-							span -20%
-						.tooltip-arrow
-							.arrow
-					.name-section
-						span Red Lamzac
-					.price-section
-						.old-price
-							span 1999грн
-						.new-price
-							span 1499грн
-					.order-section
-						button.order Купить
-			.row
+						button.order.buy#buy-blue Купить
 				.sofa-block
 					.img-section
 						img(src='images/sofas/violet.png')
+						.overlay.overlay-violet
+							.wrapper
+								span Нет в наличии
 					.tooltip-section
 						.tooltip-body
-							span -20%
+							span - 
+								span.discount-value 40
+								|%
 						.tooltip-arrow
 							.arrow
 					.name-section
 						span Violet Lamzac
 					.price-section
 						.old-price
-							span 1999грн
+							span
+								span.original-price-value 1999
+								| грн
 						.new-price
-							span 1499грн
+							span
+								span.new-price-value 1499
+								| грн
 					.order-section
-						button.order Купить
+						button.order.buy#buy-violet Купить
+				.clearfix-mobile
 				.sofa-block
 					.img-section
-						img(src='images/sofas/yellow.png')
-						.overlay
+						img(src='images/sofas/green.png')
+						.overlay.overlay-green
 							.wrapper
 								span Нет в наличии
 					.tooltip-section
 						.tooltip-body
-							span -20%
+							span - 
+								span.discount-value 40
+								|%
+						.tooltip-arrow
+							.arrow
+					.name-section
+						span Green Lamzac
+					.price-section
+						.old-price
+							span
+								span.original-price-value 1999
+								| грн
+						.new-price
+							span
+								span.new-price-value 1499
+								| грн
+					.order-section
+						button.order.buy#buy-green Купить
+				.sofa-block
+					.img-section
+						img(src='images/sofas/red.png')
+						.overlay.overlay-red
+							.wrapper
+								span Нет в наличии
+					.tooltip-section
+						.tooltip-body
+							span - 
+								span.discount-value 40
+								|%
+						.tooltip-arrow
+							.arrow
+					.name-section
+						span Red Lamzac
+					.price-section
+						.old-price
+							span
+								span.original-price-value 1999
+								| грн
+						.new-price
+							span
+								span.new-price-value 1499
+								| грн
+					.order-section
+						button.order.buy#buy-red Купить
+			.row
+				.sofa-block
+					.img-section
+						img(src='images/sofas/black.png')
+						.overlay.overlay-black
+							.wrapper
+								span Нет в наличии
+					.tooltip-section
+						.tooltip-body
+							span - 
+								span.discount-value 40
+								|%
+						.tooltip-arrow
+							.arrow
+					.name-section
+						span Black Lamzac
+					.price-section
+						.old-price
+							span
+								span.original-price-value 1999
+								| грн
+						.new-price
+							span
+								span.new-price-value 1499
+								| грн
+					.order-section
+						button.order.buy#buy-black Купить
+				.sofa-block
+					.img-section
+						img(src='images/sofas/yellow.png')
+						.overlay.overlay-yellow
+							.wrapper
+								span Нет в наличии
+					.tooltip-section
+						.tooltip-body
+							span - 
+								span.discount-value 40
+								|%
 						.tooltip-arrow
 							.arrow
 					.name-section
 						span Yellow Lamzac
 					.price-section
 						.old-price
-							span 1999грн
+							span
+								span.original-price-value 1999
+								| грн
 						.new-price
-							span 1499грн
+							span
+								span.new-price-value 1499
+								| грн
 					.order-section
-						button.order Купить
+						button.order.buy#buy-yellow Купить
 			#order-modal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='Order', aria-hidden='true')
 				.modal-dialog
 					.modal-content
@@ -262,11 +314,30 @@ html(lang='uk')
 											td.left
 												span Цвет:
 											td.right
-												select(name='color')
-													option Черный
-													option Розовый
-													option Серый
-													option Голубой
+												span#color-name
 									.button-wrapper
 										button#order.order Отправить заказ
 									span.personal-data-policy Мы не передаем Вашу персональную информацию третьим лицам
+		.container-fluid.screen-7
+			.row.work-description-title
+				h1.col-lg-12 Как мы работаем
+			.row.work-description
+				.col-md-3
+					img(src="images/form.png", alt="")
+					span Заполните форму заказа
+				.col-md-3
+					img(src="images/reply.png", alt="")
+					span Мы свяжемся с вами в течение часа
+				.col-md-3
+					img(src="images/edit.png", alt="")
+					span Уточните детали заказа
+				.col-md-3
+					img(src="images/deliever.png", alt="")
+					span Получите ваш заказ
+			.row.footer
+				.col-sm-4.city
+					span г. Ивано-Франковск
+				.col-sm-4.payment
+					img(src='images/visa-mastercard.png')
+				.col-sm-4.phone
+					span +38 (066) 881 06 22
