@@ -15,9 +15,10 @@
 	background linear-gradient(top, lightYellow, yellow)
 	text-shadow 1px 1px 1px gray
 	box-shadow 0 6px 0 deepDarkYellow
+	margin 0 0 6px 0
 	&:active
 		box-shadow 0 0 0 deepDarkYellow
-		margin-top 6px
+		margin 6px 0 0 0
 	&:hover
 		background linear-gradient(top, yellow, lightYellow)
 
@@ -162,7 +163,7 @@ body
 				.desc-text-inner
 					font-size 1.5em
 					display inline-block
-					margin 10% 0 0 0
+					margin 5% 0 5% 0
 			.desc-text
 				height 100%
 				.desc-text-inner
@@ -223,14 +224,11 @@ body
 	h1
 		text-align center
 	.row
-		margin 5% 0
 		.sofa-block
-			width 20%
-			float left
-			margin 0 2.5%
 			border 1px solid lightGray
-			padding 1%
+			padding 1em
 			border-radius 5px
+			float left
 			.img-section
 				position relative
 				width 100%
@@ -308,6 +306,8 @@ body
 
 
 @media(max-width $screen-md) // Mobile
+	.clearfix-mobile
+		clear both
 	.screen-1
 		.header-info
 			.header-info-left
@@ -327,6 +327,21 @@ body
 			.desc-img
 				img
 					margin 10% 10% 5% 10%
+	.screen-5
+		.promotion-wrapper
+			h1
+				text-align center
+		.button-wrapper
+			width 100%
+			button
+				text-align center
+	#order-screen
+		.row
+			margin 0
+			.sofa-block
+				display inline-block
+				width 40%
+				margin 5%
 
 @media(min-width $screen-md) // Desktop
 	.floating-block
@@ -350,3 +365,9 @@ body
 			.desc-img
 				img
 					margin 175px 5% 200px 10%
+	#order-screen
+		.row
+			margin 5% 0
+			.sofa-block
+				width 20%
+				margin 0 2.4%
