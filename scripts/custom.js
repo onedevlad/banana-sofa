@@ -109,6 +109,9 @@ $(document).ready(function(){ // Order module
     }
     $('#color-name').html(chosenColorName)
     $('#order-modal').modal()
+    $('#order').click(function(){
+      yaCounter39026405.reachGoal('ordering')
+    })
   })
 })
 
