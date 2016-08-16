@@ -1,5 +1,5 @@
 <?php $f=file_get_contents(dirname($_SERVER['SCRIPT_FILENAME']).'/scripts/config.json'); settype($f, 'string'); $parsed=json_decode($f, true);?>
-<?php if(isset($_POST['name']) && isset($_POST['surname']) && isset($_POST['phone']) && isset($_POST['color'])){mail($parsed['mail'], 'Новый заказ (Lamzac)!', $_POST['surname'].' '.$_POST['name'].' (.'.$_POST['phone'].') заказал(а) Lamzac, цвет: '.$_POST['color'].'.', "Content-type: text/plain; charset=utf-8");}?>
+<?php if(isset($_POST['name']) && isset($_POST['surname']) && isset($_POST['phone']) && isset($_POST['color'])){mail($parsed['mail'], 'Новый заказ (Lamzac)!', $_POST['surname'].' '.$_POST['name'].' ('.$_POST['phone'].') заказал(а) Lamzac, цвет: '.$_POST['color'].'.', "Content-type: text/plain; charset=utf-8");}?>
 doctype
 html(lang='uk')
 	head
@@ -143,8 +143,58 @@ html(lang='uk')
 							| Шезлонг очень маленький и его легко можно взять с собой куда угодно.
 
 		.container-fluid.screen-5
-			.row
-				.col-md-6.promotion-wrapper
+			.row.faq
+				h1.header
+					span.bold Ответы 
+					| на популярные вопросы:
+				.faq-content
+					.faq-bar.col-md-6
+						.faq-block.col-xs-12
+							.question
+								h3.question-text
+									.question-arrow
+									| Как надуть диван-шезлонг?
+							.answer
+								p.answer-text Всего лишь нужно наполнить воздухом через два отверстия и соединить концы застежками.
+						.faq-block.col-xs-12
+							.question
+								h3.question-text
+									.question-arrow
+									| Может ли Lamzac улететь,если на нем никто не сидит?
+							.answer
+								p.answer-text Достаточно просто поставить сверху какой-нибудь тяжелый предмет.
+						.faq-block.col-xs-12
+							.question
+								h3.question-text
+									.question-arrow
+									| Как сдуть Lamzac?
+							.answer
+								p.answer-text Нужно расстегнуть застежку, после чего воздух начнет выходить из дивана и вы сможете без проблем его свернуть.
+					.faq-bar.col-md-6
+						.faq-block.col-xs-12
+							.question
+								h3.question-text
+									.question-arrow
+									| Как долго шезлонг остается надутым?
+							.answer
+								p.answer-text Надувной диван удержывает форму 5 часов,после чего вы сможете легко его надуть.
+						.faq-block.col-xs-12
+							.question
+								h3.question-text
+									.question-arrow
+									| Какой вес выдерживает Lamzac?
+							.answer
+								p.answer-text До 200 кг.
+						.faq-block.col-xs-12
+							.question
+								h3.question-text
+									.question-arrow
+									| Смогу ли я использовать диван на воде?
+							.answer
+								p.answer-text Да, сможете.
+
+			.row.promotion-wrapper
+				.col-md-6.promotion
 					h1 Закажите Lamzac сейчас
 						br
 						| и получите скидку 
@@ -263,6 +313,7 @@ html(lang='uk')
 						button.order.buy#buy-red Купить
 			.row
 				.sofa-block
+				.sofa-block
 					.img-section
 						img(src='images/sofas/black.png')
 						.overlay.overlay-black
@@ -341,9 +392,9 @@ html(lang='uk')
 											td.left
 												span Цвет:
 											td.right
-												span#color-name
+												input(type='text', readonly='readonly', name='color')#color-name
 									.button-wrapper
-										button#order.order Отправить заказ
+										button(type='submit')#order.order Отправить заказ
 									span.personal-data-policy Мы не передаем Вашу персональную информацию третьим лицам
 		.container-fluid.screen-7
 			.row.work-description-title

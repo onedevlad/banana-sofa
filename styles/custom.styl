@@ -206,10 +206,43 @@ body
 
 .screen-5
 	padding 0
+	margin 0
 	.row
+		margin 12% 0
+	.faq
+		padding 0 2%
+		.header
+			margin 0 0 5% 0
+			.bold
+				font-weight bold
+		.faq-content
+			.question
+				position relative
+				cursor pointer
+				.question-arrow
+					absolute left 0
+					display inline-block
+					margin 5px 0 0 0
+					width 0
+					height 0
+					border-top 7px solid transparent
+					border-left 7px solid gray
+					border-bottom 7px solid transparent
+					transform-origin 50% 50%
+					transform rotateZ(0deg)
+					transition transform 0.25s ease
+					&.expanded
+						transform rotateZ(90deg)
+				.question-text
+					padding 0 0 0 21px
+					display inline-block
+			.answer
+				.answer-text
+					padding 0 0 0 21px
+
+	.promotion-wrapper
 		background gray
-		margin 15% 0
-		.promotion-wrapper
+		.promotion
 			margin 7% 0
 			h1
 				text-align center
@@ -227,7 +260,6 @@ body
 		text-align center
 	.row
 		.sofa-block
-			border 1px solid lightGray
 			padding 1em
 			border-radius 5px
 			float left

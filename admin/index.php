@@ -106,7 +106,7 @@
 					<?php
 				}
 				else{
-					mail($parsed['mail'], 'Уведомление от bananaAir!', "Используйте этот код как пароль аккаунта админ-панели: $f", "Content-type: text/plain; charset=utf-8");
+					mail($parsed['mail'], 'Уведомление от airsofa!', "Используйте этот код как пароль аккаунта админ-панели: $f", "Content-type: text/plain; charset=utf-8");
 					echo "Неверный пароль! На почту <b>".$parsed['mail']."</b> было отправлено уведомление с кодом восстановения пароля.";
 				}
 			}
@@ -129,7 +129,7 @@
 			if(!isset($_POST['discount-percent'])) $discount='30';
 			if(isset($_POST['mail']) && isset($_POST['new-password'])){
 				if($parsed['mail'] !== $mail){
-					mail($parsed['mail'], 'Уведомление bananaAir!', "E-mail приема заказов был изменен на: $mail", "Content-type: text/plain; charset=utf-8");
+					mail($parsed['mail'], 'Уведомление airsofa!', "E-mail приема заказов был изменен на: $mail", "Content-type: text/plain; charset=utf-8");
 					echo "<br/>На почту <b>".$parsed['mail']."</b> было отправлено уведомление о смене E-mail.";
 				}
 				$arr=array(
@@ -147,7 +147,7 @@
 				fwrite($fp1, md5($newPassword));
 				fclose($fp1);
 				if($f !== md5($newPassword)){
-					mail($_POST['mail'], 'Уведомление от bananaAir!', "Пароль аккаунта админ-панели сменен: $newPassword", "Content-type: text/plain; charset=utf-8");
+					mail($_POST['mail'], 'Уведомление от airsofa!', "Пароль аккаунта админ-панели сменен: $newPassword", "Content-type: text/plain; charset=utf-8");
 					echo "<br/>На почту <b>".$_POST['mail']."</b> было отправлено уведомление о смене пароля.";
 				}
 			}

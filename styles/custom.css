@@ -3766,21 +3766,77 @@ body {
 }
 .screen-5 {
   padding: 0;
+  margin: 0;
 }
 .screen-5 .row {
-  background: #262527;
-  margin: 15% 0;
+  margin: 12% 0;
 }
-.screen-5 .row .promotion-wrapper {
+.screen-5 .faq {
+  padding: 0 2%;
+}
+.screen-5 .faq .header {
+  margin: 0 0 5% 0;
+}
+.screen-5 .faq .header .bold {
+  font-weight: bold;
+}
+.screen-5 .faq .faq-content .question {
+  position: relative;
+  cursor: pointer;
+}
+.screen-5 .faq .faq-content .question .question-arrow {
+  position: absolute;
+  left: 0;
+  display: inline-block;
+  margin: 5px 0 0 0;
+  width: 0;
+  height: 0;
+  border-top: 7px solid transparent;
+  border-left: 7px solid #262527;
+  border-bottom: 7px solid transparent;
+  -webkit-transform-origin: 50% 50%;
+  -moz-transform-origin: 50% 50%;
+  -o-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+  -webkit-transform: rotateZ(0deg);
+  -moz-transform: rotateZ(0deg);
+  -o-transform: rotateZ(0deg);
+  -ms-transform: rotateZ(0deg);
+  transform: rotateZ(0deg);
+  -webkit-transition: -webkit-transform 0.25s ease;
+  -moz-transition: -moz-transform 0.25s ease;
+  -o-transition: -o-transform 0.25s ease;
+  -ms-transition: -ms-transform 0.25s ease;
+  transition: transform 0.25s ease;
+}
+.screen-5 .faq .faq-content .question .question-arrow.expanded {
+  -webkit-transform: rotateZ(90deg);
+  -moz-transform: rotateZ(90deg);
+  -o-transform: rotateZ(90deg);
+  -ms-transform: rotateZ(90deg);
+  transform: rotateZ(90deg);
+}
+.screen-5 .faq .faq-content .question .question-text {
+  padding: 0 0 0 21px;
+  display: inline-block;
+}
+.screen-5 .faq .faq-content .answer .answer-text {
+  padding: 0 0 0 21px;
+}
+.screen-5 .promotion-wrapper {
+  background: #262527;
+}
+.screen-5 .promotion-wrapper .promotion {
   margin: 7% 0;
 }
-.screen-5 .row .promotion-wrapper h1 {
+.screen-5 .promotion-wrapper .promotion h1 {
   text-align: center;
   color: #bbb;
   font-size: 2.5em;
   margin: 0;
 }
-.screen-5 .row .button-wrapper {
+.screen-5 .promotion-wrapper .button-wrapper {
   margin: 7% 0;
   font-size: 2em;
   display: inline-block;
@@ -3790,7 +3846,6 @@ body {
   text-align: center;
 }
 #order-screen .row .sofa-block {
-  border: 1px solid #bbb;
   padding: 1em;
   -webkit-border-radius: 5px;
   border-radius: 5px;

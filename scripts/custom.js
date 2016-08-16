@@ -107,7 +107,7 @@ $(document).ready(function(){ // Order module
       case 'violet': chosenColorName = 'Фиолетовый'; break;
       case 'yellow': chosenColorName = 'Жёлтый'; break;
     }
-    $('#color-name').html(chosenColorName)
+    $('#color-name').val(chosenColorName)
     $('#order-modal').modal()
     $('#order').click(function(){
       yaCounter39026405.reachGoal('ordering')
@@ -115,13 +115,28 @@ $(document).ready(function(){ // Order module
   })
 })
 
-$(document).ready(function(){
-  $('.desc-img').ready(function(){
-    setTimeout(function(){
+$(document).ready(function() { //Minor UI tweaks
+  $('.desc-img').ready(function() {
+    setTimeout(function() {
       var descImgRect = $('.desc-img')[0].getBoundingClientRect()
       var height = descImgRect.bottom - descImgRect.top
       $('.desc-text').css('height', height+'px')
     }, 0)
+  })
+
+  var slidingDelay = 250
+  var activeQuestion = null
+  $('.answer').slideUp(slidingDelay)
+  $('.question').each(function(i) {
+    $(this).click(function() {
+      if(activeQuestion !== i) {
+        $('.answer').eq(activeQuestion).slideUp(slidingDelay)
+        $('.question-arrow').eq(activeQuestion).removeClass('expanded')
+      }
+      $('.answer').eq(i).slideToggle(slidingDelay)
+      $(this).find('.question-arrow').toggleClass('expanded')
+      activeQuestion = i
+    })
   })
 })
 
